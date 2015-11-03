@@ -1,0 +1,9 @@
+Projet E - Interface-Cerveau-Machine: identification d'activités liées à la pensée neurofeedback, techniques de simulation pour le contrôle de robots par la pensée
+
+Binôme: Nizar ABAK-KALI - Alexis ZURAWSKA
+
+But du projet: implémenter un algorithme de réseau de neurones à partir d'un flux de données.
+
+Langages que l'on va utiliser: java et éventuellement C++
+
+IDE que l'on va utiliser: IntelliJ
