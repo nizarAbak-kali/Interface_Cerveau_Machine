@@ -1,0 +1,48 @@
+Projet E - Interface-Cerveau-Machine: identification d'activités liées à la pensée neurofeedback, techniques de simulation pour le contrôle de robots par la pensée
+
+Binôme: Nizar ABAK-KALI - Alexis ZURAWSKA
+
+But du projet: implémenter un algorithme de réseau de neurones à partir d'un flux de données sur une personne atteinte de la maladie d'Alzheimer afin de détecter cinq états chez elle: lire, écrire, regarder la télévision, discuter et se reposer.
+
+Définition de la maladie d'Alzheimer et des concepts:
+
+Maladie d'Alzheimer: maladie dégénérative des cellules cérébrales. C'est une maladie pour le moment incurable, évolutive et irréversible.
+Cette maladie se compose de plusieurs paliers:
+-un palier stade où le patient, ainsi que l'entourage, ne détecte rien car aucun trouble n'apparaît. D'ailleurs, même les docteurs, bien qu'ils voient les lésions cliniques ne constatent rien. Ce premier stade dure environ 10 ans;
+-un second stade où le patient commence à oublier des petits épisodes bénins de sa vie (la personne peut oublier qu'on lui a offert quelque chose une dizaine de jours avant par exemple). 
+Le patient a d'ailleurs lui-même conscience de ces oublis et a peur. IL invente donc des histoires afin de cacher ses oublis pour ne pas faire peur à son entourage. 
+La personne reste toutefois totalement autonome et lucide durant ce stade. Celui-ci dure entre 2 et 4 ans selon les personnes;
+-un stade plus tardif où les pertes de mémoire se ressentent beaucoup plus et prennent une envergure plus importante sur l'autonomie de la personne.
+ Celle-ci peut ouvrir le gaz et, par un moment d'inattention, oublier de le refermer. C'est en général au début de ce stade que le diagnostic s'impose.
+ Dans ce cadre, un traitement doit être prescrit ainsi que certaines aides humaines (notamment, une orthophoniste afin de stimuler la personne). 
+ Durant ce stade, la perssonne est encore à peu près lucide sur son état avec des hauts et des bas. 
+ Ainsi, la personne sera parfois peu réceptive alors que le lendemain, elle aura un moment d'extrême lucidité où elle pourra dire ce qu'est Alzheimer et ce qui l'attend par la suite (fuite, oubli des enfants, etc...). 
+ La personne reste encore relativement autonome durant ce stade. 
+ Il est donc important de noter que de stimuler la personne en la faisant jouer, par exemple aux cartes, est un très bon exercice.
+ Des moments d'agressivité apparaissent à partir de ce stade. 
+ Enfin, il est important de noter que le traitement "permettant de ralentir la maladie" peut avoir des effets secondaires 
+ indésirables comme le fait d'avoir l'impression de marcher sur du coton et de ne plus avoir une bonne stabilité;
+-un autre stade où le patient est sujet à des chutes importantes provoquant de gros bleus sur une grande partie du corps, sachant que la personne ne s'en souvient pas et qu'elle ne sait pas expliquer l'apparition de ces bleus. Par ailleurs, la personne commence à faire des choses incohérentes comme par exemple mettre une paire de chaussons au réfrégirateur. L'agressivité est donc d'autant plus intense quand les proches s'en apperçoivent et posent des questions à la personne. La personne commence également à perdre la notion du temps et se met par exemple à oublier les anniversaires (elle peut même à peine réagir quand on lui souhaite son propre anniversaire). Au cours de ce stade, les moments de lucidité se font plus rares;
+-lors du stade suivant, la personne voit sa capacité à comprendre les choses très atteinte. Elle ne comprend plus comment lire un calendrirer ni même se baser sur un programme Télé, si bien qu'elle se trompe souvent de semaine. La personne perd également toute notion d'hygiène. Ainsi, la personne peut porter des vêtements sales ou vivre dans son appartement crasseux sans même s'en rendre compte. D'ailleurs, la personne est persuadée que sa maison est propre et affirme que le ménage est fait (ce qui peut être vrai mais souvent très mal fait). La personne laisse également trainer ses aliments à l'air libre (même des yaourts ou des boîtes de conserves ouverts). La personne ne tombe toutefois pas malade, le corps s'habituant à manger et boire des aliments impropres. Il en est de même pour la vaisselle. Par ailleurs, la personne tourne toujours autour des mêmes sujets de conversation et n'en engage plus si nous ne le faisons pas. La mémoire immédiate étant très très altérée à ce stade, la personne peut répéter une cinquantaine de fois une phrase en boucle sur une durée d'à peine cinq minutes. Le placement doit commencer à s'envisager à ce stade car la personne n'a plus conscience de son état. Les moments de lucidité se font extrêmement rares au cours de ce stade et ne durent que l'espace de quelques minutes. Enfin, des contractions musculaires commencent et la perssonne a de plus en plus de mal à marcher, à couper ses aliments, à manger, à se laver, etc... En dernier lieu, la personne commence à perdre ses mots et à les substituer par d'autres non appropriés (la personne va parler d'un tiroir pour une boîte aux lettres par exemple). La personne commence à oublier les personnes de l'entourage si elles ne viennent pas régulièrement la voir;
+-lors du dernier stade qui se passe, en général, en maison médicalisée, l'état du patient se dégrade grandement et très vite. La perssonne qui marchait en arrivant fini, incessemment sous peu en fauteuil roulant pour être finalement alité. La personne n'est plus propre et doit impérativement porter des couches et être nourrie par perfusions et/ou par sondes. La personne ne parle plus et est souvent endormie à cause des effets des médicaments. Le patient peurt après ce stade. Il est aussi important de noter qu'à partir du quatrième stade, la personne peut mourir d'une fausse route, celles-ci se produisant assez régulièrement.
+POur finir, il est important de noter que cette maladie fatigue beaucoup le patient qui dort de plus en plus lors de l'avancement de la maladie. De part leur mémoire de plus en plus défaillante, ils perdent également le goût de la lecture, oubliant coup sur coup ce qu'ils viennent de lire.
+
+NB: La maladie d'Alzheimer, comme toutes les autres démences séniles ne sont pas des "maladies de vieux" et peuvent, malheureusement, arriver à tout âge.
+
+BCI: Brain-Computer-Interface ou Interface Neuronale Directe (IND) ou encore Interface Cerveau Machine ou Interface Cerveau Ordinateur en français:  interface de communication directe 
+entre un cerveau et un dispositif externe (un ordinateur, un système électronique…). Ces systèmes peuvent être conçus pour assister, améliorer ou réparer des fonctions humaines de cognition 
+ou d'action défaillantes. L'IND peut être unidirectionnelle ou bidirectionnelle.  
+
+EEG: L'électroencéphalographie (EEG) est une méthode d'exploration cérébrale qui mesure l'activité électrique du cerveau par des électrodes placées sur le cuir chevelu souvent représentée sous la forme d'un tracé appelé électroencéphalogramme. Comparable à l'électrocardiogramme qui permet d'étudier le fonctionnement du cœur, l'EEG est un examen indolore et non-invasif qui renseigne sur l'activité neurophysiologique du cerveau au cours du temps et en particulier du cortex cérébral soit dans un but diagnostique en neurologie, soit dans la recherche en neurosciences cognitives.
+
+Cas d'utilisation des IND: observer l'état d'un sujet à un moment donné, lui permettre de réaliser des choses par la pensée quand celui-ci est dans l'incapacité de le faire normalement (contrôler un curseur sur un écran par la pensée quand on ne peut pas utiliser une souris dans le cas d'une tétraplégie par exemple). Dans notre cas, le fait de connaître l'état d'une personne atteinte de la maladie d'Alzheimer pourra nous aider à déterminer si elle a passé un nouveau palier de la maladie ou pas (plus de lecture car trop de fatigue par exemple).
+
+Méthodes:
+-P300: La P300 est un potentiel évoqué : P signifie que c'est une onde d'amplitude positive, et 300 sous-entend qu'elle apparait 300 ms après le début d'une stimulation. La P300, aussi appelée P3, n'est pas un potentiel cérébral spécifique, elle représente un ensemble d'activités d'aires cérébrales variées et largement distribuées. La principale technique d'investigation de la P300 est l'électroencéphalographie;
+-SSVEP: Steady State Visually Evoked Potentials ou Etats Stables Potentiels Evoqués Visuellement en français: signaux représentant des réponses naturelles à une stimulation visuelle à une certaine fréquence.Quand la rétine est excité par un stimulus visuel, le cerveau génère une activité électrique dans le même temps.Ce procédé est beaucoup utilisé en EEG.
+
+Outils mathématiques que l'on va utiliser: les vecteurs, les scalaires, le gradient ainsi que l'algorithme du gradient afin de mettre au point notre algorithme de réseau de neurones.
+
+Langages que l'on va utiliser: java et éventuellement C++
+
+IDE que l'on va utiliser: IntelliJ et éventuellement CodeBlocks
