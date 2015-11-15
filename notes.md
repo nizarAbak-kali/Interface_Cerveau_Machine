@@ -1,3 +1,6 @@
+#### Description :
+Notes prises lors du premiers rdv avec Mr Boubchir le 27/10/2015
+
 BCI :
 ======
     > Alzheimer
@@ -35,3 +38,5 @@ Une Bd pour 5 activité à detecter
 + Cas d'utilisation
     > Controle d'une machine
     > Surveillance du status d'un sujet .
+
+
