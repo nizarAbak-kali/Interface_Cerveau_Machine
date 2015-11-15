@@ -18,3 +18,17 @@ https://fr.wikipedia.org/wiki/Interface_neuronale_directe
 http://www.inserm.fr/thematiques/technologies-pour-la-sante/dossiers-d-information/l-interface-cerveau-machine-ou-agir-par-la-pensee
 //
 http://www.internetactu.net/2012/11/21/interfaces-cerveau-machines-defis-et-promesses/
+//
+https://github.com/marytts/marytts/blob/master/marytts-signalproc/src/main/java/marytts/util/math/FFTMixedRadix.java
+//
+http://www.tangentex.com/FFT.htm
+//
+http://www.javaworld.com/article/2074798/build-ci-sdlc/chart-a-new-course-with-jfreechart.html
+//
+http://introcs.cs.princeton.edu/java/97data/FFT.java.html
+//
+https://moodle.umons.ac.be/mod/resource/view.php?id=11577
+//
+http://www.java2s.com/Code/Java/Chart/JFreeChartLineChartDemo1.htm
+//
+http://jcharts.sourceforge.net/samples/scatter.html
