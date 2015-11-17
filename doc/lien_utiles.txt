@@ -1,34 +1,87 @@
 petites listes de lien utiles :
 
-// 
+Présentation des réseaux de neurones avec retour (apprentissage supervisé). Ce sont les premiers types de réseaux de neurones et ce sont les plus simples, surtout ceux avec un seul perceptron où les entrées sont directement reliées aux sorties avec, eventuellement des noeuds cachés. Pour les réseaux multi-perceptron, on a plusieurs couches qui sont reliées entre elles.
+
+//
 https://en.wikipedia.org/wiki/Feedforward_neural_network
+
+Gradient: grandeur vectorielle indiquant la façon dont une grandeur physique varie dans l'espace. En mathématiques, on le représente par un vecteur reflet de la variation d'une fonction en fonctiion de ses paramètres. Ceci nous sera utile car nous allons étudier l'état d'une personne en fonction de la variation des paramètres que seront les données que nous possèderons.
+
 //
 https://fr.wikipedia.org/wiki/Gradient
+
+Algorithme de Gradient: algorithme itératif d'optimisation par améliorations. Il est donc particulièrement judicieux de l'utiliser dans le cadre de l'apprentissage des réseaux de neurones.
+
 //
 https://fr.wikipedia.org/wiki/Algorithme_du_gradient
+
+Méthode la plus utilisée de correction des erreurs du réseau de neurones durant la période d'apprentissage.
+
 //
 https://fr.wikipedia.org/wiki/R%C3%A9tropropagation_du_gradient
+
+Théorie sur les réseaux de neurones.
+
 //
 https://takinginitiative.wordpress.com/2008/04/03/basic-neural-network-tutorial-theory/
+
+Tutoriel sur l'implémentation du réseau de neurones. Approche orientée objet en C++.
+
 //
 https://takinginitiative.wordpress.com/2008/04/23/basic-neural-network-tutorial-c-implementation-and-source-code/
+
+Interface Neuronale Directe: liaison entre un homme et une machine pour permettre l'assistance par la pensée et/ou la récupération partielle de certains sens comme la vue. Trois types:
+-IND invasifs: systèmes implantés directement dans la matière grise du cerveau, ce qui permet une réception du signal de grande qualité;
+-IND partiellement invasifs: technologie implantée dans la boîte cranienne et non dans la masse cérébrale, ce qui présente un risque moindre;
+-IND non-invasifs: ils utilisent l'imagerie médicale et sont faciles à porter. Toutefois, on a une faible résolution du signal.
+
 //
-https://fr.wikipedia.org/wiki/Interface_neuronale_directe	
+https://fr.wikipedia.org/wiki/Interface_neuronale_directe
+
+Dossier sur les applications des interfaces neuronales directes. Pour que cela fonctionne, il faut un équipement récupérant les signaux électriques du cerveau, un logiciel qui interprète les signaux afin de répondre aux besoins des personnes lourdement handicapées. Elles servent notamment à faire bouger un robot pour qu'il donne une canette de coca, uniquement par la pensée, ou encore d'écrire sur un ordinateur ou de jouer à des jeux vidéo, là encore, uniquement par la pensée.
+
 //
 http://www.inserm.fr/thematiques/technologies-pour-la-sante/dossiers-d-information/l-interface-cerveau-machine-ou-agir-par-la-pensee
+
+Dossier présentant les limites de ces interfaces cerveau-machine:
+-pour l'instant, elles ne font qu'une tâche et une seule;
+-elles mettront du temps à apparaître dans le domaine du grand public, celles-ci ayant un but, à la base, médical;
+-une fois celles-ci dans le grand public, elles seront très chères et ne seront pas accessibles à tout le monde, ce qui défavorisera les plus pauvres.
+
 //
 http://www.internetactu.net/2012/11/21/interfaces-cerveau-machines-defis-et-promesses/
+
+Classe java représentant la transformée de Fourrier: Beaucoup utilisée dans le domaine des intégrales en mathématiques, celle-ci servant à transformer une fonction intégrable (possédant une intégrale) en une autre fonction décrivant le spectre fréquentiel.
+
 //
 https://github.com/marytts/marytts/blob/master/marytts-signalproc/src/main/java/marytts/util/math/FFTMixedRadix.java
+
+Présentation, implémentation et exemple d'utilisation de l'algorithme de FFT (Fast Fournier Transformation): permet de réduire le temps d'exécution d'une quantité astronomique de calcul pour une très bonne qualité de signal que permet la transofmée de Fourrier classique. Cet algorithme est beaucoup utilisé dans le calcul du spectre d'un signal périodique. Une puissance de 2 est imposée pour celui-ci car celle-ci permet la rapidité de l'algorithme.
+
 //
 http://www.tangentex.com/FFT.htm
+
+Brève présentation de l'utilisation de la librairie JFreeCharts pour réaliser différents types de graphiques à partir d'un ensemble de données
+
 //
 http://www.javaworld.com/article/2074798/build-ci-sdlc/chart-a-new-course-with-jfreechart.html
+
+Classe java qui calcule la transformée rapide de Fourier ainsi que son inverse au travers de deux fonctions.
+
 //
 http://introcs.cs.princeton.edu/java/97data/FFT.java.html
+
+Introduction aux systèmes linéaires invarients: présentation notamment du problème de Fibonnacci.
+
 //
 https://moodle.umons.ac.be/mod/resource/view.php?id=11577
+
+Graphiques linéaires que l'on voit accompagnés de leur implémentation en java.
+
 //
 http://www.java2s.com/Code/Java/Chart/JFreeChartLineChartDemo1.htm
+
+Graphique avec des points reliés entre eux.
+
 //
 http://jcharts.sourceforge.net/samples/scatter.html
