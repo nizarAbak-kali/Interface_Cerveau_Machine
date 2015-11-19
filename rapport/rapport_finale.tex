@@ -1,0 +1,71 @@
+\documentclass[a4paper,12pt,final]{article}
+
+\usepackage[english,francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[pdftex]{graphicx}
+
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage[french]{varioref}
+
+\newcommand{\reporttitle}{Rapport sur les conférences industrielles}     
+\newcommand{\reportauthora}{Nizar ABAK-KALI {11290569}} % Auteur
+\newcommand{\reportauthorb}{Alexis ZURAWSKA {12310497}} % Auteur
+\newcommand{\reportsubject}{BCI : Detection et classification des activités cérébrales} % Sujet
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\setlength{\parskip}{1ex} % Espace entre les paragraphes
+
+
+\hypersetup{
+    pdftitle={\reporttitle},%
+    pdfauthor1={\reportauthora},%v
+    pdfauthor2={\reportauthorb},%v
+    pdfsubject={\reportsubject},%
+    pdfkeywords={rapport} {vos} {mots} {clés}
+}
+
+\title{Rapport sur le Projet tutoré}
+\author{Nizar ABAK-KALI\\
+		Alexis ZURAWSKA}
+\date{\today}
+ 
+
+\begin{document}
+
+\include{title}
+
+\cleardoublepage % Dans le cas du recto verso, ajoute une page blanche si besoin
+
+\tableofcontents
+\sloppy
+%%\include{sommaire}
+
+\cleardoublepage 
+
+\include{introduction}
+
+\cleardoublepage
+
+\include{lecture_part}
+
+\cleardoublepage
+
+\include{archi_part}
+
+\cleardoublepage
+
+\include{result_part}
+
+\cleardoublepage
+
+\include{demo_part}
+
+\cleardoublepage
+
+\include{conclusion}
+
+\cleardoublepage
+
+\end{document}
+
