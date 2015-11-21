@@ -1,0 +1,125 @@
+\documentclass{beamer}
+
+\mode<presentation>{
+  %\usetheme{Warsaw}
+  %\usetheme{Montpellier}
+  \usetheme{PaloAlto}
+  \setbeamercovered{transparent}
+}
+
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{subfigure}
+\usepackage{times}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Projet Tuteuré : BCI}
+\subtitle{Interface Cerveau-Machine pour détection des différents états d'une personne atteinte de la maladie d'Alzheimer}
+
+\author{Nizar ABAK-KALI\\Alexis ZURAWSKA}
+
+\institute{
+  PARIS XIII Saint-Denis \\
+  nizarabakkali93@gmail.com 
+  alexis.zurawska@yahoo.fr
+  }
+
+\date{\today}
+ 
+
+\pgfdeclareimage[height=0.8cm]{le-logo}{liasd}
+\logo{\pgfuseimage{le-logo}}
+
+\AtBeginSection[]{
+  \begin{frame}<beamer>{PLAN DE LA PRESENTATION}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{PLAN DE LA PRESENTATION}
+  \tableofcontents
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+%%%%%%%%%%%%%ETAT DES LIEUX
+\begin{frame}  
+  \begin{exampleblock}{Présentation du Projet}
+        Pouvoir connaître, à partir de l'EEG, l’état d'un patient atteint d'Alzheimer.\\
+        5 états :
+        \begin{itemize}
+            \item lecture 
+            \item écriture
+            \item attention sur un film
+            \item discussion
+            \item repos 
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%Problematique rencontre
+\begin{frame}
+  \begin{alertblock}{Problématique rencontre}
+    \begin{itemize}
+    \item Comment classer les signaux récupérer ?
+    \item Quels critères/caractéristiques doit-on prendre en compte pour le classification ?
+    \item Comment rendre notre système plus performant?
+    \end{itemize}
+  \end{alertblock}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Outils Utilises}
+\begin{frame}
+  \begin{exampleblock}{Outils}
+   \begin{itemize}
+    \item Langage : Java 
+    \item IDE : IntelliJ
+    \item Librairie JFreeCharts : Génération de Graphiques
+    \item Github 
+    \item LaTex 
+    \end{itemize}
+\end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Avancement}
+\begin{frame}
+  \begin{exampleblock}{Ce qui a été fait}
+   \begin{itemize}
+    \item  Mise en place du dépôt GitHub avec toutes les sources et certains documents et liens utiles
+    \item Développement des fonctions mathématiques
+    \item Squelette du rapport final
+    \end{itemize}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \begin{exampleblock}{Ce qu'il reste a faire}
+   \begin{itemize}
+    \item Développement du traitement du signal EEG
+    \item Développement des fonction temporelles pour le rÃ©seau de neurones
+    \item Développement du Classifier
+    \end{itemize}
+\end{exampleblock}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \titlepage
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+
