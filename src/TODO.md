@@ -4,7 +4,7 @@
     - [x] ajouter la librairie JFreeCharts
     - [ ] écrire les fonctions de Caractéristique temporelle
     - [ ] commencer à ecrire la structure du réseau de neurones
-    - [ ] faire une classe qui recupere le fichier de données et le convertit en tableau de
+    - [x] faire une classe qui recupere le fichier de données et le convertit en tableau de
     données.
     - [x] Commencer à ecrire le rapport du projet
     - [x] Commencer à préparer la première présentation devant le jury
