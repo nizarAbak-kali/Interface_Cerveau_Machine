@@ -1,0 +1,15 @@
+\select@language {french}
+\contentsline {part}{I\hspace {1em}Introduction Th\IeC {\'e}orique}{3}{part.1}
+\contentsline {section}{\numberline {1}BCI}{3}{section.1}
+\contentsline {section}{\numberline {2}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}}{3}{section.2}
+\contentsline {section}{\numberline {3}Contexte}{3}{section.3}
+\contentsline {part}{II\hspace {1em}Architecture de l'application}{4}{part.2}
+\contentsline {section}{\numberline {4}Organigramme}{4}{section.4}
+\contentsline {section}{\numberline {5}Composant de l'application}{4}{section.5}
+\contentsline {section}{\numberline {6}Explication Technique}{4}{section.6}
+\contentsline {subsection}{\numberline {6.1}Id\IeC {\'e}\IeC {\'e}s}{4}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Outils}{4}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Algorithmes}{4}{subsection.6.3}
+\contentsline {part}{III\hspace {1em}Resultat}{5}{part.3}
+\contentsline {section}{\numberline {7}tableau de resultat}{5}{section.7}
+\contentsline {part}{IV\hspace {1em}Demo de l'application}{6}{part.4}
