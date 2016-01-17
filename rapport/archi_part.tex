@@ -3,10 +3,19 @@
 	\section{Organigramme} % (fold)
 	\label{sec:organigramme}
 	
+	(voir diagramme de classes ci-contre)
+	
 	% section organigramme (end)
 
 	\section{Composant de l'application} % (fold)
 	\label{sec:composant_de_l_application}
+	
+	L'application est composée de cinq packages: eeg, math, neuron, charts et donnees. Nous allons donc décrire le contenu de chacun de ces packages ainsi que le rôle des classes qui les composent:
+	-eeg contient la classe EEG_time_signal qui contiendra les fonctions concernant le traitement du signal en fonction des données reçues et traitées;
+	-math contient toutes les fonctions mathématiques avec la classe ComplexNumber permettant de créer et gérer les nombres complexes, la classe ComplexArray qui permet de stocker les valeurs réelles et imaginaires des nombres complexes, la classe Hilbert qui contient les fonctions concernant les espaces d'Hilbert (extension des espaces euclidiens à des dimensions finies quelconques ou infinies) et enfin la classe Fft qui contient les fonctions en rapport avec la Transformée Rapide de Fourrier;
+	-neuron contient la classe CaracteristiqueTemporel qui contient toutes les fonctions ayant attrait aux caractéristiques temporelles d'un neuronne pour le réseau qui sera par la suite créé. Ces caractéristiques temporelles regroupent notamment la moyenne des données, la variance, etc...;
+	-charts contient la classe Graphique afin de générer les graphiques une fois les résultats obtenus à partir des données grâce à la librairie JFreeCharts;
+	-donnees contient la classe RecupFichier permettant de récupérer la base de données pour la stocker en mémoire afin de permettre au programme de travailler avec.
 	
 	% section composant_de_l_application (end)
 
@@ -16,13 +25,19 @@
 		\subsection{Idéés} % (fold)
 		\label{sub:idéés}
 		
+		Nous avons eu l'éidée, pour ce projet, de créer un classifieur représenté par un réseau de neurones afin d'obtenir des résultats à partir d'un flux de données que nous stockerons en mémoire dans un tableau. Chaque donnée sera représentée par un vecteur. Pour chaque vecteur, chacune de ses dimensions représentera un état de la personne atteinte que nous chercherons à reconnaître (lecture, repos, regarder un film, etc...). Nous sommes partis de ces idées là car, lors de nos lectures sur les interfaces homme-machine, il s'est avéré que ce mode de traitement du signal est très utilisé (c'est d'ailleurs le seul).
+		
 		% subsection idéés (end)
 		\subsection{Outils} % (fold)
 		\label{sub:outils}
 		
+		Nous avons développé notre application au moyen du langage java et nous avons utilisé l'IDE Intellij qui est très pratique car très ergonomique et très intuitif. Par ailleurs, nous avons inclus la librairie JFreeCharts pour réaliser des graphiques sans les contraintes de la bibliothèque Swing pour créer des interfaces ainsi que le plug-in LaTex afin de rédiger plus facilement nos rapports directement au sein de l'IDE.
+		
 		% subsection outils (end)
 		\subsection{Algorithmes} % (fold)
 		\label{sub:algorithmes}
+		
+		Nous allons utiliser l'algorithme des k-means ou k-moyennes afin de réaliser notre application d'analyse des états d'une personne atteinte de la maladie d'Alzheimer. Celui-ci consiste, à partir d'un ensemble de données, un ensemble de paramètres statistiques tels que la moyenne, la variance, le mode, la médiane, etc... Par ailleurs, il sera important de calculer la distance euclidienne entre ces données qui seront représentées par des vecteurs. Ainsi, plus la distance entre ces vecteurs sera petite, plus ces données seront rapprochées afin de répartir en "petits tas" les données qui sont proches. Cela permettra ensuite au réseau de neurones créé d'apprendre de manière supervisée (on donne la réponse en cas d'erreur jusqu'à ce que le réseau de neurones trouve tout seul) l'ensemble des données et de pouvoir les classifier ensuite afin de donner des résultats cohérents sur ces données. 
 		
 		% subsection algorithmes (end)
 	% section explication_technique (end)
