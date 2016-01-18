@@ -1,15 +1,20 @@
-\documentclass[a4paper,12pt,final]{article}
+% class sympa mais ne gère pas les annèxes
+%\documentclass[a4paper,12pt,final]{article}
+% gères les appendix
+\documentclass[a4paper,12pt,final]{report}
 
 \usepackage[english,francais]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[pdftex]{graphicx}
-
+\usepackage{caption} 
+\usepackage[toc,page]{appendix}
 \usepackage{setspace}
 \usepackage{hyperref}
 \usepackage[french]{varioref}
+\usepackage[final]{pdfpages}
 
-\newcommand{\reporttitle}{Rapport sur les conférences industrielles}     
+\newcommand{\reporttitle}{Rapport I projet tuteuré}     
 \newcommand{\reportauthora}{Nizar ABAK-KALI {11290569}} % Auteur
 \newcommand{\reportauthorb}{Alexis ZURAWSKA {12310497}} % Auteur
 \newcommand{\reportsubject}{BCI : Detection et classification des activités cérébrales} % Sujet
@@ -60,13 +65,14 @@
 
 \cleardoublepage
 
-\include{demo_part}
-
-\cleardoublepage
-
 \include{conclusion}
 
 \cleardoublepage
+
+\include{annexes}
+
+\cleardoublepage
+
 
 \end{document}
 

@@ -8,11 +8,11 @@
     données.
     - [x] Commencer à ecrire le rapport du projet
     - [x] Commencer à préparer la première présentation devant le jury
-    - [ ] Ecriture du premier rapport :
-        . [ ] Intro
+    - [X] Ecriture du premier rapport :
+        . [X] Intro
         . [60%] les lectures
-        . [ ] l'architecture du projet
-        . [ ] resultat
+        . [X] l'architecture du projet
+        . [X] resultat
         . [ ] demo
-        . [ ] conclusion
-    - [ ] penser a revoir la présentation avec les nouveautés si il y en a
+        . [X] conclusion
+    - [ ] penser a revoir la présentation avec les nouveautés si il y en a 

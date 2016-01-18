@@ -1,30 +1,52 @@
 \part{Architecture de l'application} % (fold)
 \label{prt:architecture_ _de_ _l_'_application_}
-	\section{Organigramme} % (fold)
-	\label{sec:organigramme}
+	\chapter{Organigramme} % (fold)
+	cf Annexes .
+		
+
+	% chapter organigramme (end)
+
+	\chapter{Composant de l'application} % (fold)
+	\label{chap:composant_de_l_application}
+	 cf. Annexes pour les diagrammes de classes.
+
+	L'application est composée de cinq packages: eeg, math, neuron, charts et donnees. Nous allons donc décrire le contenu de chacun de ces packages ainsi que le rôle des classes qui les composent:
+	\begin{itemize}
+		
+	\item [-] eeg :  contient la classe EEG\_time\_signal qui contiendra les fonctions concernant le traitement du signal en fonction des données reçues et traitées;
+	\item [-] math :  contient toutes les fonctions mathématiques avec la classe ComplexNumber permettant de créer et gérer les nombres complexes, la classe ComplexArray qui permet de stocker les valeurs réelles et imaginaires des nombres complexes, la classe Hilbert qui contient les fonctions concernant les espaces d'Hilbert (extension des espaces euclidiens à des dimensions finies quelconques ou infinies) et enfin la classe Fft qui contient les fonctions en rapport avec la Transformée Rapide de Fourrier(ou Fast Fourrier Transform);
+	\item [-] neuron : contient la classe CaracteristiqueTemporel qui contient toutes les fonctions ayant attrait aux caractéristiques temporelles d'un neuronne pour le réseau qui sera par la suite créé. Ces caractéristiques temporelles regroupent notamment la moyenne des données, la variance, etc...;
+	\item [-] charts : contient la classe Graphique afin de générer les graphiques une fois les résultats obtenus à partir des données grâce à la librairie JFreeCharts;
+	\item [-] donnees : contient la classe RecupFichier permettant de récupérer la base de données pour la stocker en mémoire afin de permettre au programme de travailler avec.
 	
-	% section organigramme (end)
-
-	\section{Composant de l'application} % (fold)
-	\label{sec:composant_de_l_application}
+	\end{itemize}
 	
-	% section composant_de_l_application (end)
+	% chapter composant_de_l_application (end)
 
-	\section{Explication Technique} % (fold)
-	\label{sec:explication_technique}
+	\chapter{Explication Technique} % (fold)
+	\label{chap:explication_technique}
 		
-		\subsection{Idéés} % (fold)
-		\label{sub:idéés}
+		\section{Idéés} % (fold)
+		\label{sec:idees}
 
 		
-		% subsection idéés (end)
-		\subsection{Outils} % (fold)
-		\label{sub:outils}
+		Nous avons eu l'idée, pour ce projet, de créer un "classifieur" représenté par un réseau de neurones afin d'obtenir des résultats à partir d'un flux de données que nous stockerons en mémoire dans un tableau. Chaque donnée sera représentée par un vecteur. Pour chaque vecteur, chacune de ses dimensions représentera une caractéristique du signal EEG de la personne atteinte que nous chercherons à reconnaître (le tout afin de reconnaître les états tel : lecture, repos, regarder un film, etc...). Nous sommes partis de ces idées là car, lors de nos lectures sur les interfaces cerveau-machine, il s'est avéré que ce mode de traitement du signal est très utilisé .
 		
-		% subsection outils (end)
-		\subsection{Algorithmes} % (fold)
-		\label{sub:algorithmes}
+		% section idéés (end)
+		\section{Outils} % (fold)
+		\label{sec:outils}
 		
-		% subsection algorithmes (end)
+		Nous avons développé notre application au moyen du langage Java et nous avons utilisé l'IDE Intellij qui est très pratique car très ergonomique et très intuitif. 
+		Deplus nous avons utilisé Git comme gestionnaire de version, le code étant hébergé sur les serveurs de Github. De surcroît nous avons utilisé JavaDoc pour générer un documentation du code.
+		Par ailleurs, nous avons inclus la librairie JFreeCharts pour réaliser des graphiques sans les contraintes de la bibliothèque Swing pour créer des interfaces ainsi que l'extension LaTex afin de rédiger plus facilement nos rapports directement au sein de l'IDE.
+		Par ailleurs, nous avons utilisé le logiciel argoUML pour réaliser le diagramme de classes de l'application et OpenOffice Draw pour réaliser l'organigramme.
+		
+		% section outils (end)
+		\section{Algorithmes} % (fold)
+		\label{sec:algorithmes}
+		
+		Nous allons utiliser l'algorithme des k-means ou k-moyennes afin de réaliser notre application d'analyse des états d'une personne atteinte de la maladie d'Alzheimer. Celui-ci consiste, à partir d'un ensemble de données, un ensemble de paramètres statistiques tels que la moyenne, la variance, le mode, la médiane, etc... Par ailleurs, il sera important de calculer la distance euclidienne entre ces données qui seront représentées par des vecteurs. Ainsi, plus la distance entre ces vecteurs sera petite, plus ces données seront rapprochées afin de répartir en "petits tas" les données qui sont proches. Cela permettra ensuite au réseau de neurones créé d'apprendre de manière supervisée (on donne la réponse en cas d'erreur jusqu'à ce que le réseau de neurones trouve tout seul) l'ensemble des données et de pouvoir les classifier ensuite afin de donner des résultats cohérents sur ces données. 
+		
+		% section algorithmes (end)
 	% section explication_technique (end)
 % part architecture_ _de_ _l_'_application_ (end)
