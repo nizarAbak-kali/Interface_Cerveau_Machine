@@ -1,9 +1,11 @@
+package donnees;
+
 import java.io.*;
 
 public class RecupFichier {
 
     public void chargerFichier(File fichier, int memoireNecessaire, String cheminFichier) {
-
+        String chaine = cheminFichier;
         String backSlash = System.getProperty("file.separator");
         String virgule = System.clearProperty("file.separator");
         chaine.replace(backSlash, "\\");
@@ -11,7 +13,7 @@ public class RecupFichier {
         String [] donnees = new String[memoireNecessaire];
 
         try {
-            InputStream flux = new FileInputStream(file);
+            InputStream flux = new FileInputStream(fichier);
             InputStreamReader lecture = new InputStreamReader(flux);
             BufferedReader buff = new BufferedReader(lecture);
             String ligne;
@@ -22,8 +24,12 @@ public class RecupFichier {
                 donnees[i]=ligne;
                 i++;
                 }
-            }
-            buff.close();
+            flux.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }
