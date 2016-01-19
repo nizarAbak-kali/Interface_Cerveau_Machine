@@ -1,25 +1,28 @@
 \part{Classification automatique des activités cérébrales} % (fold)
 \label{prt:classification_ _automatique_ _des_ _activités_ _cérébrales_}
 	\section{Schéma Générale} % (fold)
+	cf~\ref{fig_orga}, page~\pageref{fig_orga}.
 		\label{sec:schéma_générale}
-		\begin{figure}
+		\begin{figure}[t]
 			\centering
-			    \includegraphics []{../organigramme/orga.jpg} \\
+			    \includegraphics{../organigramme/orga.jpg} \\
 		    	\captionof{figure}{Organigramme du fonctionnement générale de l'application}
 				\label{fig_orga}
 			\end{figure}
 
 	\section{Pré-Traitement du signal} % (fold)
 	\label{sec:pré_traitement_du_signal}
+Cette étape consiste à un traitement sur le signal EEG obtenue afin de réduire les "bruits"(ou artefact) créer par les activités du sujet lors de l’acquisition du signal, tel: la position du sujet(sachant que un EEG standard se fait en position allongé ou assise avec un sujet relaxé), les mouvements des muscles du visage (exemple: clignement des yeux). Ainsi on applique une transformé de Fourrier au signal afin d'éliminer les bruits .
 	
 	% section pré_traitement_du_signal (end)
 	\section{Extraction des caractéristiques} % (fold)
 	\label{sec:extraction_des_caractéristiques}
-	
+	cette étape est très importante car elle permet de déduire des caractéristique notable du signal, elle se déroule lors de la phase d'apprentissage du réseau de neurones. Ainsi, un signal sera caractérisé par un vecteur de caractéristique. On peut déduire plusieurs types de caractéristiques : temporelle, fréquentielle, tempo-fréquentielle\footnote{voir les référence~\ref{}}.
+
 	% section extraction_des_caractéristiques (end)
 	\section{Classification par réseaux de neurones} % (fold)
 	\label{sec:classification_par_réseaux_de_neurones}
-	
+	Pour la prise de décision nous avons choisi d'utiliser un réseau de neurones SOM, ainsi le signal sera classifier selon différent type de classe .Ces classes seront les activités du sujet que l'on veut détecter. 
 	% section classification_par_réseaux_de_neurones (end)
 	% section schéma_générale (end)
 % part classification_ _automatique_ _des_ _activités_ _cérébrales_ (end)

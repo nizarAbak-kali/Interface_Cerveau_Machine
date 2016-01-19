@@ -1,23 +1,57 @@
 \part{Architecture de l'application} % (fold)
 \label{prt:architecture_ _de_ _l_'_application_}
-	\section{Organigramme} % (fold)
-	cf Annexes .
-		
-
-	% section organigramme (end)
-
+	
 	\section{Composant de l'application} % (fold)
 	\label{sec:composant_de_l_application}
-	 cf. Annexes pour les diagrammes de classes.
-
+	\begin{figure}[h!]
+			\centering
+		    \includegraphics []{../diagramme_classes/packages.png} \\
+		    \captionof{figure}{Packages composant l'application}
+			\label{fig_pack}
+	\end{figure}
 	L'application est composée de cinq packages: eeg, math, neuron, charts et donnees. Nous allons donc décrire le contenu de chacun de ces packages ainsi que le rôle des classes qui les composent:
 	\begin{itemize}
-		
-	\item [-] eeg :  contient la classe EEG\_time\_signal qui contiendra les fonctions concernant le traitement du signal en fonction des données reçues et traitées;
-	\item [-] math :  contient toutes les fonctions mathématiques avec la classe ComplexNumber permettant de créer et gérer les nombres complexes, la classe ComplexArray qui permet de stocker les valeurs réelles et imaginaires des nombres complexes, la classe Hilbert qui contient les fonctions concernant les espaces d'Hilbert (extension des espaces euclidiens à des dimensions finies quelconques ou infinies) et enfin la classe Fft qui contient les fonctions en rapport avec la Transformée Rapide de Fourrier(ou Fast Fourrier Transform);
-	\item [-] neuron : contient la classe CaracteristiqueTemporel qui contient toutes les fonctions ayant attrait aux caractéristiques temporelles d'un neuronne pour le réseau qui sera par la suite créé. Ces caractéristiques temporelles regroupent notamment la moyenne des données, la variance, etc...;
-	\item [-] charts : contient la classe Graphique afin de générer les graphiques une fois les résultats obtenus à partir des données grâce à la librairie JFreeCharts;
-	\item [-] donnees : contient la classe RecupFichier permettant de récupérer la base de données pour la stocker en mémoire afin de permettre au programme de travailler avec.
+			
+	\item [-] eeg : 
+		\begin{figure}[h!]
+			\centering
+		    \includegraphics []{../diagramme_classes/eeg.png} \\
+		    \captionof{figure}{Classe EEG\_time\_signal}
+			\label{fig_eeg}
+  		\end{figure}
+	 contient la classe EEG\_time\_signal qui contiendra les fonctions concernant le traitement du signal en fonction des données reçues et traitées;
+	\item [-] math :
+		\begin{figure}[h!]
+			\centering
+		    \includegraphics [scale=0.5]{../diagramme_classes/math.png} 
+		    \captionof{figure}{Classes pour les calculs mathématiques }
+			\label{fig_math}
+    		\end{figure} 
+	contient toutes les fonctions mathématiques avec la classe ComplexNumber permettant de créer et gérer les nombres complexes, la classe ComplexArray qui permet de stocker les valeurs réelles et imaginaires des nombres complexes, la classe Hilbert qui contient les fonctions concernant les espaces d'Hilbert (extension des espaces euclidiens à des dimensions finies quelconques ou infinies) et enfin la classe Fft qui contient les fonctions en rapport avec la Transformée Rapide de Fourrier(ou Fast Fourrier Transform);
+	\newpage
+	\item [-] neuron : 
+	\begin{figure}[h!]
+			\centering
+		    \includegraphics []{../diagramme_classes/neuron.png} \\
+		    \captionof{figure}{Classe Caractéristique}
+			\label{fig_neuron}
+    		\end{figure}
+	contient la classe CaracteristiqueTemporel qui contient toutes les fonctions ayant attrait aux caractéristiques temporelles d'un neuronne pour le réseau qui sera par la suite créé. Ces caractéristiques temporelles regroupent notamment la moyenne des données, la variance, etc...;
+	\item [-] charts :
+	 \begin{figure}[h!]
+			\centering
+		    \includegraphics []{../diagramme_classes/charts.png} \\
+		    \captionof{figure}{Classe Graphique}
+			\label{fig_graph}
+			\end{figure}
+	 contient la classe Graphique afin de générer les graphiques une fois les résultats obtenus à partir des données grâce à la librairie JFreeCharts;
+	\item [-] donnees : 
+		\begin{figure}[h!]
+		    \includegraphics []{../diagramme_classes/donnees.png} \\
+		    \captionof{figure}{Classe RecupFichier}
+			\label{fig_donnees}
+  			\end{figure}
+	contient la classe RecupFichier permettant de récupérer la base de données pour la stocker en mémoire afin de permettre au programme de travailler avec.
 	
 	\end{itemize}
 	
@@ -44,9 +78,10 @@
 		% section outils (end)
 		\section{Algorithmes} % (fold)
 		\label{sec:algorithmes}
-		
-		Nous allons utiliser l'algorithme des k-means ou k-moyennes afin de réaliser notre application d'analyse des états d'une personne atteinte de la maladie d'Alzheimer. Celui-ci consiste, à partir d'un ensemble de données, un ensemble de paramètres statistiques tels que la moyenne, la variance, le mode, la médiane, etc... Par ailleurs, il sera important de calculer la distance euclidienne entre ces données qui seront représentées par des vecteurs. Ainsi, plus la distance entre ces vecteurs sera petite, plus ces données seront rapprochées afin de répartir en "petits tas" les données qui sont proches. Cela permettra ensuite au réseau de neurones créé d'apprendre de manière supervisée (on donne la réponse en cas d'erreur jusqu'à ce que le réseau de neurones trouve tout seul) l'ensemble des données et de pouvoir les classifier ensuite afin de donner des résultats cohérents sur ces données. 
-		
+		 Par rapport à notre avancement courant, les algorithmes les plus intéressant à présenter sont la fft\footnote{Fast Fourrier Transform} et la transformé de Hilbert qui utilise la fft . \\ 
+		 La fft est un algorithme de calcul de la transformation de Fourrier discrète il nous sert lors de la partie de post-traitement du signal, mais aussi dans la transformée d'Hilbert.\\
+		 La transformée d'Hilbert est utilisé dans le traitement du signal pour passer le signal réel dans le domaine complexe d’où la classe ComplexNumber. Cette transformée est utilisé lors des calculs de caractéristique temporelles .
+
 		% section algorithmes (end)
 	% section explication_technique (end)
 % part architecture_ _de_ _l_'_application_ (end)
