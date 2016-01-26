@@ -15,4 +15,4 @@
         . [X] resultat
         . [ ] demo
         . [X] conclusion
-    - [ ] penser a revoir la présentation avec les nouveautés si il y en a 
+    - [X] penser a revoir la présentation avec les nouveautés si il y en a

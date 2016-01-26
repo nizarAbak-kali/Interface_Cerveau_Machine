@@ -68,7 +68,7 @@ public class ComplexNumber {
         return new ComplexNumber(reel, imagi);
     }
 
-    // retourne un nouvel objet complex dont la valeur est : this + c
+    // retourne un nouvel objet complex dont la valeur est : this - c
     public ComplexNumber minus(ComplexNumber c) {
         ComplexNumber a = this; // reference a l'objet présent
         double reel = a.real - c.real;
