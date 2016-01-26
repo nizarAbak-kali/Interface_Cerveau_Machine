@@ -1,42 +1,46 @@
 \documentclass{beamer}
 
 \mode<presentation>{
-  %\usetheme{Warsaw}
+  \usetheme{Warsaw}
   %\usetheme{Montpellier}
-  \usetheme{PaloAlto}
+  %\usetheme{PaloAlto}
   \setbeamercovered{transparent}
 }
 
-\usepackage[french]{babel}
+\usepackage[english,french]{babel}
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{subfigure}
 \usepackage{times}
+\usepackage[french]{varioref}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage{caption} 
+%\usepackage{movie15}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Projet Tuteuré : BCI}
-\subtitle{Interface Cerveau-Machine pour détection des différents états d'une personne.
+\subtitle{Interface Cerveau-Machine pour détection des différents états d'une personne.}
 
-\author{Nizar ABAK-KALI\\Alexis ZURAWSKA}
+\author{Nizar ABAK-KALI, Alexis ZURAWSKA}
 
 \institute{
   PARIS VIII Saint-Denis \\
-  nizarabakkali93@gmail.com 
+  nizarabakkali93@gmail.com,  
   zurawska.alexis@yahoo.com
   }
 
 \date{\today}
  
 
-\pgfdeclareimage[height=0.8cm]{le-logo}{liasd}
+\pgfdeclareimage[height=0.8cm]{le-logo}{paris8}
 \logo{\pgfuseimage{le-logo}}
 
 \AtBeginSection[]{
-  \begin{frame}<beamer>{PLAN DE LA PRESENTATION}
-    \tableofcontents[currentsection]
-  \end{frame}
+ \begin{frame}<beamer>{PLAN DE LA PRESENTATION}
+   \tableofcontents[currentsection]
+\end{frame}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -53,19 +57,64 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-%%%%%%%%%%%%%ETAT DES LIEUX
+%%%%%%%%%%%%%ETAT DE L'ART
 \begin{frame}  
   \begin{exampleblock}{Présentation du Projet}
-        Pouvoir connaître, à partir de l'EEG, l’état d'une personne.\\
-        5 états :
+        Détection automatique d'états d'un patient à partir de son signal EEG. 
+        Classification des états et prise de decision fait par un réseaux de neurones.\\
+        Example d'état que l'on veut détécter sur un patient atteint d'Alzheimer:
         \begin{itemize}
-            \item lecture 
-            \item écriture
-            \item attention sur un film
-            \item discussion
-            \item repos 
+            \item la lecture 
+            \item l'écriture
+            \item l'attention sur un film
+            \item la discussion
+            \item le repos 
         \end{itemize}
     \end{exampleblock}
+\end{frame}
+
+%%%%%%%%%%%%%CONCEPTS
+\section{Concepts}
+
+\begin{frame}
+Quelques explications sur les concepts étudiés et utilisés.
+  \begin{exampleblock}{EEG: électroencéphalographie }
+      \begin{figure}[h]
+               \centering
+               \includegraphics[scale=0.5]{eeg_1s_signal.png} 
+              \captionof{figure}{ci-dessus une seconde de signal EEG}     
+      \end{figure}
+      \end{exampleblock}
+      \begin{exampleblock}{BCI: Brain Computer Interface}
+      \begin{figure}[h]
+               \centering
+               \includegraphics[scale=0.4]{bci3.png} 
+              \captionof{figure}{ci dessus un BCI}
+      \end{figure}  
+      BCI : Brain Computer Interface
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}  
+  Quelques explications sur les concepts étudiés et utilisés
+        \begin{exampleblock}{SSVEP}        
+          \begin{figure}[h]
+               \centering
+               %\includemovie{1cm}{1cm}{ssvep.gif}[inline=false]
+              \captionof{figure}{ci-dessus une utilisation du SSVEP}     
+          \end{figure}
+        \end{exampleblock}
+\end{frame}
+
+\begin{frame}  
+  Quelques explications sur les concepts étudiés et utilisés
+  \begin{exampleblock}{P300}
+   \begin{figure}[h]
+      \centering
+     % \includemovie{1cm}{1cm}{p300.gif}[inline=false]
+      \captionof{figure}{ci-dessus une utilisation du P300}     
+   \end{figure}
+        
 \end{frame}
 
 
@@ -95,15 +144,15 @@
     \end{itemize}
 \end{exampleblock}
 \end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Avancement}
 \begin{frame}
   \begin{exampleblock}{Ce qui a été fait}
    \begin{itemize}
-    \item  Mise en place du dépôt GitHub avec toutes les sources et certains documents et liens utiles
+    \item Mise en place du dépôt GitHub avec toutes les sources et certains documents et liens utiles
     \item Développement des fonctions mathématiques
     \item Développement de la classe permettant de récupérer la base de données pour la stocker en mémoire dans un tableau. 
-    \item Premier rapport rédigé
     \end{itemize}
 \end{exampleblock}
 \end{frame}
@@ -111,8 +160,7 @@
 \begin{frame}
   \begin{exampleblock}{Ce qu'il reste a faire}
    \begin{itemize}
-    \item Développement du traitement du signal EEG
-    \item Développement des fonction temporelles pour le réseau de neurones
+    \item L'extraction des caractéristiques 
     \item Développement du Classifieur
     \end{itemize}
 \end{exampleblock}
