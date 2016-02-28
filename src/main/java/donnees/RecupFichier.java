@@ -4,12 +4,8 @@ import java.io.*;
 
 public class RecupFichier {
 
-    public void chargerFichier(File fichier, int memoireNecessaire, String cheminFichier) {
-        String chaine = cheminFichier;
-        String backSlash = System.getProperty("file.separator");
-        String virgule = System.clearProperty("file.separator");
-        chaine.replace(backSlash, "\\");
-        fichier = new File(chaine);
+    public void chargerFichier(int memoireNecessaire) {
+        File fichier = new File("");
         String [] donnees = new String[memoireNecessaire];
 
         try {
