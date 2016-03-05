@@ -4,8 +4,10 @@ import java.io.*;
 
 public class RecupFichier {
 
-    public void chargerFichier(int memoireNecessaire) {
-        File fichier = new File("");
+    //fonction qui sera modifiée en fonction de la base de données que nous aurons par la suite
+
+    public void chargerFichier(int memoireNecessaire, String nomFichier) {
+        File fichier = new File(nomFichier);
         String [] donnees = new String[memoireNecessaire];
 
         try {
@@ -27,5 +29,17 @@ public class RecupFichier {
             e.printStackTrace();
         }
 
+    }
+
+    //Fonction qui sera modifiée par la suite en fonction de la base de données que l'on aura par la suite.
+
+    public float[] convertirDonnees(int memoireNecessaire, String [] donneesInitiales) {
+
+        float [] donneesConverties = new float[memoireNecessaire];
+
+        for(int i=0;i<donneesInitiales.length;i++) {
+            donneesConverties[i]=Float.valueOf(donneesInitiales[i]);
+        }
+        return donneesConverties;
     }
 }

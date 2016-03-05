@@ -7,7 +7,7 @@ import java.util.Random;
  */
 public class NeuronNetwork {
 
-    private int [][] neurons;
+    private float [][] neurons;
     private int nbNeurons;
     private int nbMinimalNeurons;
     private int nbMaximalNeurons;
@@ -17,17 +17,17 @@ public class NeuronNetwork {
         this.nbMinimalNeurons=10;
         this.nbMaximalNeurons=100;
         this.nbNeurons = nbMinimalNeurons + r.nextInt(nbMaximalNeurons - nbMinimalNeurons);
-        this.neurons = new int[nbNeurons][4];
+        this.neurons = new float[nbNeurons][4];
         init();
     }
 
     private void init() {
-        int minimalWeight = (int) (-2.4/this.nbNeurons);
-        int maximalWeight = (int) (2.4/this.nbNeurons);
+        float minimalWeight = (float) (-2.4/this.nbNeurons);
+        float maximalWeight = (float) (2.4/this.nbNeurons);
         Random r = new Random();
         for(int i=0;i<neurons.length;i++) {
             neurons[i][0]=0; //initialisation de la valeur des neurones à 0
-            neurons[i][1] = minimalWeight + r.nextInt(maximalWeight - minimalWeight); //initialisation du poids des neurones
+            neurons[i][1] = minimalWeight + (r.nextFloat()+ minimalWeight)-(maximalWeight); //initialisation du poids des neurones
             neurons[i][2]=0; //initialisation des données pour chaque neurone
             neurons[i][3]=0; //initialisation des gradients d'erreur
         }

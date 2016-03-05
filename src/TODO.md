@@ -2,7 +2,7 @@
     - [x] écrire les fonctions mathématiques du projet
     - [x] faire une brève description au-dessus de chaque lien utile
     - [x] ajouter la librairie JFreeCharts
-    - [ ] écrire les fonctions de Caractéristique temporelle
+    - [X] écrire les fonctions de Caractéristique temporelle
     - [X] commencer à ecrire la structure du réseau de neurones
     - [x] faire une classe qui recupere le fichier de données et le convertit en tableau de
     données.
