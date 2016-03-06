@@ -9,36 +9,49 @@ package neuron;
  */
 public class CaracteristiqueTemporel {
 
-    double f1;
-    double f2;
-    double f3;
-    double f4;
+    float f1;
+    float f2;
+    float f3;
+    float f4;
 
     public CaracteristiqueTemporel() {
         init();
     }
 
     private void init() {
-        mean();
-        variance();
-        skewness();
-        kurtosis();
+        float mean = mean();
+        float variance = variance();
+        float ecartType = ecartType();
+        float skewness = skewness();
+        float kurtosis = kurtosis();
     }
 
-    private void mean() {
-
-    }
-
-    private void variance() {
-
-    }
-
-    private void skewness() {
+    private float mean() {
+        return addition()/4;
 
     }
 
-    private void kurtosis() {
+    private float addition() {
+        return this.f1+this.f2+this.f3+this.f4;
+    }
 
+    private float variance() {
+
+        return ((1/4) * (f1 - mean() + f2 - mean() + f3 - mean() + f4 - mean()));
+
+    }
+
+    private float ecartType() {
+        return (float) Math.sqrt(variance());
+    }
+
+    private float skewness() {
+        return (addition()*addition()*addition())/(ecartType()*ecartType()*ecartType());
+    }
+
+    private float kurtosis() {
+
+        return (addition()*addition()*addition()*addition())/(ecartType()*ecartType()*ecartType()*ecartType());
     }
 
 }
