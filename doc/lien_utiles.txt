@@ -85,3 +85,6 @@ Graphique avec des points reliés entre eux.
 
 //
 http://jcharts.sourceforge.net/samples/scatter.html
+
+// base de donnée libre pour BCI
+http://sccn.ucsd.edu/~arno/fam2data/publicly_available_EEG_data.html
