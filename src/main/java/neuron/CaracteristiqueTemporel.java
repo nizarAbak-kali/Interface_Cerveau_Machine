@@ -9,12 +9,14 @@ package neuron;
  */
 public class CaracteristiqueTemporel {
 
-    float f1;
-    float f2;
-    float f3;
-    float f4;
+    float mean;
+    float variance;
+    float skewness;
+    float kurtosis;
+    float[] data;
 
-    public CaracteristiqueTemporel() {
+    public CaracteristiqueTemporel(float[] data) {
+        this.data = data;
         init();
     }
 
@@ -26,32 +28,91 @@ public class CaracteristiqueTemporel {
         float kurtosis = kurtosis();
     }
 
+    // moyenne des données ;
     private float mean() {
-        return addition()/4;
+        float som = 0;
+
+        for (int i = 0; i < data.length; i++) {
+            som += data[i];
+        }
+
+        return som / data.length;
 
     }
 
     private float addition() {
-        return this.f1+this.f2+this.f3+this.f4;
+        return this.mean + this.variance + this.skewness + this.kurtosis;
     }
 
+    // il s'agit de l'ecart type au carré
     private float variance() {
+        float som = 0;
+        for (int i = 0; i < data.length; i++) {
+            som += (mean - data[i]) * (mean - data[i]);
+        }
 
-        return ((1/4) * (f1 - mean() + f2 - mean() + f3 - mean() + f4 - mean()));
+        return som / data.length;
 
     }
 
     private float ecartType() {
-        return (float) Math.sqrt(variance());
+        return (float) Math.sqrt(variance);
     }
 
     private float skewness() {
-        return (addition()*addition()*addition())/(ecartType()*ecartType()*ecartType());
+        float som = 0;
+        for (int i = 0; i < data.length; i++) {
+            som += (data[i] - mean) * (data[i] - mean) * (data[i] - mean);
+        }
+        float ec3 = ecartType();
+        ec3 = ec3 * ec3 * ec3;
+        return som / (data.length * ec3);
     }
 
     private float kurtosis() {
-
-        return (addition()*addition()*addition()*addition())/(ecartType()*ecartType()*ecartType()*ecartType());
+        float som = 0;
+        for (int i = 0; i < data.length; i++) {
+            som += (data[i] - mean) * (data[i] - mean) * (data[i] - mean) * (data[i] - mean);
+        }
+        float ec4 = ecartType();
+        ec4 = ec4 * ec4 * ec4 * ec4;
+        return som / (data.length * ec4);
     }
 
+    private float variationCoeff() {
+        return ecartType() / mean;
+    }
+
+    private float median_absolute_deviation() {
+        float som = 0;
+
+        for (int i = 0; i < data.length; i++) {
+            som += data[i] - mean;
+        }
+
+        return som / data.length;
+    }
+
+    private float rms() {
+        float som = 0;
+
+        for (int i = 0; i < data.length; i++) {
+            som += data[i] * data[i];
+        }
+
+        return (float) Math.sqrt(som / data.length);
+    }
+
+    private float iqr() {
+        return data[3 * (data.length) / 4] - data[(data.length + 1) / 4];
+    }
+
+    private float shannon_entropy() {
+        float som = 0;
+
+        for (int i = 0; i < data.length; i++) {
+            som += data[i] * Math.log(data[i]);
+        }
+        return -som;
+    }
 }

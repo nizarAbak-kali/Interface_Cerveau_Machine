@@ -10,9 +10,12 @@
     - [x] Commencer à préparer la première présentation devant le jury
     - [X] Ecriture du premier rapport :
         . [X] Intro
-        . [60%] les lectures
+        . [X] les lectures
         . [X] l'architecture du projet
         . [X] resultat
-        . [ ] demo
+        . [0] demo
         . [X] conclusion
     - [X] penser a revoir la présentation avec les nouveautés si il y en a
+    - [ ] Creer un set de donné bidon pour tester le reseau de neurones
+    - [ ] test la nouvelle lib d'affichage de signal
+    - [ ] retaper le nouveau rapport en incorporant les nouveautés
