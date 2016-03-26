@@ -8,11 +8,18 @@ package math;
  */
 public class Fft {
 
+    /**
+     * Constructeur par défaut d'un fft
+     */
 
     public Fft() {
     }
 
-    // compute the FFT of x[], assuming its length is a power of 2
+    /**
+     * compute the FFT of x[], assuming its length is a power of 2
+     * @param x
+     * @return fft of X[]
+     */
     public static ComplexNumber[] fft(ComplexNumber[] x) {
         int N = x.length;
 
@@ -47,6 +54,12 @@ public class Fft {
 
         return y;
     }
+
+    /**
+     * Calcule le fft inverse de x[] en partant du principe que x est un nombre paire
+     * @param x
+     * @return fft inverse de X[]
+     */
 
     // Calcule le fft innverse de x[] en partant du principe que x est un nb paire
     public static ComplexNumber[] ifft(ComplexNumber[] x) {

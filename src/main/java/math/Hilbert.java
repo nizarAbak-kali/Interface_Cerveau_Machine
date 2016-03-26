@@ -19,12 +19,26 @@ package math;
  * - y[n], the Discrete Hilbert Transform of x[n] is computed by y[n]=IFFT(X(w)H(w)) for n=0,...,N-1
  */
 public class Hilbert {
-    public static ComplexNumber[] transform(double[] x) {
+
+    /**
+     * Fonction permettant d'appliquer la transformée de Fourrier sur un tableau de nombres flottants donné.
+     * @param x
+     * @return Le tableau de nombres complèxes résultant de la transformée de Fourrier.
+     */
+
+    public static ComplexNumber[] transform(float[] x) {
         return transform(x, x.length);
     }
 
 
-    public static ComplexNumber[] transform(double[] x, int N) {
+    /**
+     * Fonction permettant d'appliquer la transformée de Fourrier sur un tableau de nombres flottants d'une longueur donnée, ces deux variables étant passées en paramètres.
+     * @param x
+     * @param N
+     * @return Le tableau de nombres complèxes résultant de la transformée de Fourrier.
+     */
+
+    public static ComplexNumber[] transform(float[] x, int N) {
 
         ComplexNumber[] tmp = new ComplexNumber[N];
         for (int i = 0; i < N; i++) {
@@ -35,20 +49,20 @@ public class Hilbert {
         ComplexNumber[] X = Fft.fft(tmp);
 
         // on creer un nouveau tab de reels ;
-        double[] H = new double[N];
+        float[] H = new float[N];
 
         // on récupere l'entier le plus proche inférieur ou égale à (N/2+0.5)
         int NOver2 = (int) Math.floor(N / 2 + 0.5);
 
         int w;
-        H[0] = 1.0;
-        H[NOver2] = 1.0;
+        H[0] = (float) 1.0;
+        H[NOver2] = (float) 1.0;
 
         for (w = 1; w <= NOver2 - 1; w++)
-            H[w] = 2.0;
+            H[w] = (float) 2.0;
 
         for (w = NOver2 + 1; w <= N - 1; w++)
-            H[w] = 0.0;
+            H[w] = (float) 0.0;
 
         for (w = 0; w < N; w++) {
             X[w].setReal(X[w].getReal() * H[w]);

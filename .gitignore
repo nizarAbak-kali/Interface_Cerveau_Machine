@@ -1,4 +1,6 @@
 # Maven ignore
+.classpath
+.project
 /target/
 
 

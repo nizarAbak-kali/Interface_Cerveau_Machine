@@ -2,6 +2,7 @@ package neuron;
 
 /**
  * Created by Alexou on 10/03/2016.
+ * Classe définissant les caractéristiques d'un neurone pour permettre la création du réseau dans la classe NeuronNetwork
  */
 public class Neuron {
 
@@ -9,6 +10,10 @@ public class Neuron {
     private float weight;
     private float donnee;
     private float errorGradient;
+
+    /**
+     * Construction d'un neurone dont les attributs sont tous initialisés à 0.
+     */
 
     public Neuron() {
 
@@ -19,6 +24,14 @@ public class Neuron {
         this.errorGradient=0;
     }
 
+    /**
+     * Construction d'un neurone dont tous les attributs sont des valeurs passées en paramètres.
+     * @param value
+     * @param weight
+     * @param donnee
+     * @param errorGradient
+     */
+
     public Neuron(float value, float weight, float donnee, float errorGradient) {
         this.value = value;
         this.weight = weight;
@@ -26,33 +39,73 @@ public class Neuron {
         this.donnee = donnee;
     }
 
+    /**
+     *
+     * @return La valeur du neurone.
+     */
+
     public float getValue() {
         return value;
     }
+
+    /**
+     * Permet de modifier la valeur du neurone.
+     * @param value
+     */
 
     public void setValue(float value) {
         this.value = value;
     }
 
+    /**
+     *
+     * @return Le poids du neurone.
+     */
+
     public float getWeight() {
         return weight;
     }
+
+    /**
+     * Permet de modifier le poids du neurone.
+     * @param weight
+     */
 
     public void setWeight(float weight) {
         this.weight = weight;
     }
 
+    /**
+     *
+     * @return La donnée que comporte le neurone.
+     */
+
     public float getDonnee() {
         return donnee;
     }
+
+    /**
+     * Permet de modifier la donnée du neurone.
+     * @param donnee
+     */
 
     public void setDonnee(float donnee) {
         this.donnee = donnee;
     }
 
+    /**
+     *
+     * @return Le gradient d'erreur du neurone.
+     */
+
     public float getErrorGradient() {
         return errorGradient;
     }
+
+    /**
+     * Permet de modifier le gradient d'erreur du neurone.
+     * @param errorGradient
+     */
 
     public void setErrorGradient(float errorGradient) {
         this.errorGradient = errorGradient;

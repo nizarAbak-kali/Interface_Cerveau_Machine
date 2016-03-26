@@ -13,9 +13,18 @@ import java.io.IOException;
 public class LireCVS {
     private String file_p;
 
+    /**
+     * Constructeur d'une instance de LireCVS.
+     * @param file_path
+     */
+
     public LireCVS(String file_path) {
         this.file_p = file_path;
     }
+
+    /**
+     * Méthode qui permet de lire les données d'un fichier donné et de les afficher dans la console.
+     */
 
     public void run() {
         BufferedReader bufferedReader = null;

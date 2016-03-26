@@ -16,6 +16,8 @@
         . [0] demo
         . [X] conclusion
     - [X] penser a revoir la présentation avec les nouveautés si il y en a
-    - [ ] Creer un set de donné bidon pour tester le reseau de neurones
+    - [ ] tester notre réseau de neurones sur les données fournies
     - [ ] test la nouvelle lib d'affichage de signal
+    - [X] générer la javadoc du projet
+    - [X] écriture d'une classe de tests pour tester les classes mathématiques.
     - [ ] retaper le nouveau rapport en incorporant les nouveautés
