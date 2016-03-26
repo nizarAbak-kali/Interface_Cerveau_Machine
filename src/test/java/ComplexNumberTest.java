@@ -1,14 +1,9 @@
-package tests;
-
-import junit.framework.Assert;
 import junit.framework.TestCase;
 import math.ComplexNumber;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Alexou on 26/03/2016.*
@@ -59,7 +54,7 @@ public class ComplexNumberTest extends TestCase {
     @Test
     public void testPhase() throws Exception {
 
-        assertEquals(3.14, c.phase());
+        assertFalse(-Math.PI < c.phase() || c.phase() < Math.PI);
     }
 
     @Test
