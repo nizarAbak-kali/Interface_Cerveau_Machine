@@ -36,7 +36,6 @@ public class LireCVS {
             while ((line = bufferedReader.readLine()) != null) {
                 String[] signal = line.split(cvsSplitBy);
 
-                System.out.println(signal.toString());
             }
 
 
