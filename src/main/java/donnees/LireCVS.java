@@ -1,9 +1,7 @@
 package donnees;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 
 /**
  * Created by nizar on 04/03/2016.
@@ -26,33 +24,50 @@ public class LireCVS {
      * Méthode qui permet de lire les données d'un fichier donné et de les afficher dans la console.
      */
 
-    public void run() {
-        BufferedReader bufferedReader = null;
-        String line = "";
-        String cvsSplitBy = ",";
+    public ArrayList<String> chargerFichier() {
+
+        ArrayList<String> listeDonnees = new ArrayList<String>();
+
+        String backSlash = System.getProperty("file.separator");
+        String virgule = System.clearProperty("file.separator");
+        file_p.replace(backSlash, "\\");
+        File fichierDonneesIris = new File(file_p);
 
         try {
-            bufferedReader = new BufferedReader(new FileReader(this.file_p));
-            while ((line = bufferedReader.readLine()) != null) {
-                String[] signal = line.split(cvsSplitBy);
+            InputStream flux = new FileInputStream(fichierDonneesIris);
+            InputStreamReader lecture = new InputStreamReader(flux);
+            BufferedReader buff = new BufferedReader(lecture);
+            String ligne;
+            int i=0;
 
+            while((ligne=buff.readLine())!=null && i!=listeDonnees.size()) {
+                listeDonnees.add(ligne);
+                i++;
             }
+            buff.close();
 
-
-        } catch (FileNotFoundException e) {
+        } catch(Exception e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                bufferedReader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
         }
 
+        return listeDonnees;
 
     }
 
+    public ArrayList<Float> convertirDonnees(ArrayList<String> donnees) {
+
+        ArrayList<Float> donneesConverties = new ArrayList<Float>();
+
+        for(int i=0;i<donnees.size();i++) {
+            donneesConverties.add(Float.valueOf(donnees.get(i)));
+        }
+
+        return donneesConverties;
+
+    }
+
+    public void run() {
+        ArrayList<String> donneesFichier = chargerFichier();
+        ArrayList<Float> donneesConverties = convertirDonnees(donneesFichier);
+    }
 }
