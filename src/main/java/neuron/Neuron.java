@@ -50,7 +50,7 @@ public class Neuron {
 
     /**
      * Permet de modifier la valeur du neurone.
-     * @param value
+     * @param value: float
      */
 
     public void setValue(float value) {
@@ -68,7 +68,7 @@ public class Neuron {
 
     /**
      * Permet de modifier le poids du neurone.
-     * @param weight
+     * @param weight: float
      */
 
     public void setWeight(float weight) {
@@ -86,7 +86,7 @@ public class Neuron {
 
     /**
      * Permet de modifier la donnée du neurone.
-     * @param donnee
+     * @param donnee: float
      */
 
     public void setDonnee(float donnee) {
@@ -104,7 +104,7 @@ public class Neuron {
 
     /**
      * Permet de modifier le gradient d'erreur du neurone.
-     * @param errorGradient
+     * @param errorGradient: float
      */
 
     public void setErrorGradient(float errorGradient) {

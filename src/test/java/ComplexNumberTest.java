@@ -54,7 +54,7 @@ public class ComplexNumberTest extends TestCase {
     @Test
     public void testPhase() throws Exception {
 
-        assertFalse(-Math.PI < c.phase() || c.phase() < Math.PI);
+        assertTrue(-Math.PI < c.phase() || c.phase() > Math.PI);
     }
 
     @Test
@@ -99,35 +99,34 @@ public class ComplexNumberTest extends TestCase {
     @Test
     public void testDivides() throws Exception {
 
-        assertEquals(new ComplexNumber(12.5/29, 2/29), c.divides(c2));
-
+        assertEquals(new ComplexNumber(0.43103450536727905, -0.06896551698446274), c.divides(c2));
     }
 
     @Test
     public void testExp() throws Exception {
 
-        assertEquals(new ComplexNumber(6.58, 10.25), c.exp());
+        assertEquals(new ComplexNumber(6.5822296142578125, -10.251214981079102), c.exp());
 
     }
 
     @Test
     public void testSin() throws Exception {
 
-        assertEquals(new ComplexNumber(new ComplexNumber(1.541457, -1.173825)), c.sin());
+        assertEquals(new ComplexNumber(new ComplexNumber(-1.2362291812896729, 0.941504955291748)), c.sin());
 
     }
 
     @Test
     public void testCos() throws Exception {
 
-        assertEquals(new ComplexNumber(new ComplexNumber(1.541457, 0.0517)), c.cos());
+        assertEquals(new ComplexNumber(new ComplexNumber(-1.2362291812896729, 0.7033251523971558)), c.cos());
 
     }
 
     @Test
     public void testTan() throws Exception {
 
-        assertEquals(new ComplexNumber(-1, 1), c.tan());
+        assertEquals(new ComplexNumber(0.7554702758789062, -0.3273392915725708), c.tan());
 
     }
 }

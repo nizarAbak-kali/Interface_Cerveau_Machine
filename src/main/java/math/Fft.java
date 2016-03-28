@@ -17,7 +17,7 @@ public class Fft {
 
     /**
      * compute the FFT of x[], assuming its length is a power of 2
-     * @param x
+     * @param x: tableau de ComplexNumber
      * @return fft of X[]
      */
     public static ComplexNumber[] fft(ComplexNumber[] x) {
@@ -57,7 +57,7 @@ public class Fft {
 
     /**
      * Calcule le fft inverse de x[] en partant du principe que x est un nombre paire
-     * @param x
+     * @param x: tableau de ComplexNumber
      * @return fft inverse de X[]
      */
 

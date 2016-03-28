@@ -31,8 +31,8 @@ public class ComplexNumber {
 
     /**
      * Constructeur d'un nombre complèxe.
-     * @param realIn
-     * @param imagIn
+     * @param realIn: float
+     * @param imagIn: float
      */
 
     public ComplexNumber(float realIn, float imagIn) {
@@ -42,8 +42,8 @@ public class ComplexNumber {
 
     /**
      * Constructeur d'un nombre complèxe.
-     * @param realIn
-     * @param imagIn
+     * @param realIn: double
+     * @param imagIn: double
      */
 
     public ComplexNumber(double realIn, double imagIn) {
@@ -62,7 +62,7 @@ public class ComplexNumber {
 
     /**
      * Permet de modifier la partie réelle du nombre complèxe.
-     * @param real
+     * @param real: double
      */
 
     public void setReal(double real) {
@@ -80,7 +80,7 @@ public class ComplexNumber {
 
     /**
      * Perme de modifier la partie imaginaire du nombre complèxe.
-     * @param imag
+     * @param imag: double
      */
 
     public void setImag(double imag) {
@@ -110,7 +110,7 @@ public class ComplexNumber {
 
     /**
      *
-     * @param c
+     * @param c: ComplexNumber
      * @return L'addition d'un autre nombre complèxe à celui passé en paramètre.
      */
 
@@ -124,7 +124,7 @@ public class ComplexNumber {
 
     /**
      *
-     * @param c
+     * @param c: ComplexNumber
      * @return La soustraction d'un autre nombre complèxe à celui passé en paramètre.
      */
 
@@ -139,7 +139,7 @@ public class ComplexNumber {
 
     /**
      *
-     * @param c
+     * @param c: ComplexNumber
      * @return La multiplication d'un nombre complèxe par celui passé en paramètre.
      */
 
@@ -153,7 +153,7 @@ public class ComplexNumber {
 
     /**
      *
-     * @param d
+     * @param d: double
      * @return La multiplication scalaire d'un complèxe par celui passé en paramètre.
      */
 
@@ -186,7 +186,7 @@ public class ComplexNumber {
 
     /**
      *
-     * @param b
+     * @param b: ComplexNumber
      * @return La division du nombre complèxe par celui passé en paramètre.
      */
 

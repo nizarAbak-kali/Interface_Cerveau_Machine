@@ -17,7 +17,7 @@ public class CaracteristiqueTemporel {
 
     /**
      * Constructeur d'une caractéristique temporelle à partir d'un tableau de flottants représentant les données passé en paramètre.
-     * @param data
+     * @param data: tableau de float
      */
 
     public CaracteristiqueTemporel(float[] data) {

@@ -22,7 +22,7 @@ public class Hilbert {
 
     /**
      * Fonction permettant d'appliquer la transformée de Fourrier sur un tableau de nombres flottants donné.
-     * @param x
+     * @param x: tableau de float
      * @return Le tableau de nombres complèxes résultant de la transformée de Fourrier.
      */
 
@@ -33,8 +33,8 @@ public class Hilbert {
 
     /**
      * Fonction permettant d'appliquer la transformée de Fourrier sur un tableau de nombres flottants d'une longueur donnée, ces deux variables étant passées en paramètres.
-     * @param x
-     * @param N
+     * @param x: tableau de float
+     * @param N: int
      * @return Le tableau de nombres complèxes résultant de la transformée de Fourrier.
      */
 

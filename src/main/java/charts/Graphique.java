@@ -33,7 +33,7 @@ public class Graphique {
 
     /**
      * Méthode principale qui lancera tout le programme.
-     * @param
+     * @param args:String
      */
 
     public static void main(String[] args) {

@@ -34,7 +34,7 @@ public class ComplexArray {
 
     /**
      * Construction d'un tableau de nombres complèxes de longueur passée en paramètres.
-     * @param len
+     * @param len:int
      */
 
     public ComplexArray(int len) {
@@ -43,8 +43,8 @@ public class ComplexArray {
 
     /**
      * Construction d'un tableau de nombres complèxes grâce à un tableau de valeurs réelles et un autre de valeurs imaginaires passées en paramètres.
-     * @param realVals
-     * @param imagVals
+     * @param realVals:tableau de double
+     * @param imagVals: tableau de double
      */
 
     public ComplexArray(double[] realVals, double[] imagVals) {
@@ -57,7 +57,7 @@ public class ComplexArray {
 
     /**
      * Construction d'un tableau de complèxe à partir d'un ComplexArray passé en paramètre.
-     * @param c
+     * @param c: ComplexArray
      */
 
     public ComplexArray(ComplexArray c) {
@@ -66,7 +66,7 @@ public class ComplexArray {
 
     /**
      * Initialise le tableau de nombres complèxe en donnant la longueur passée en paramètre aux deux tableaux d'imaginaires et de réels.
-     * @param len
+     * @param len: int
      */
 
     public void init(int len) {
@@ -84,7 +84,7 @@ public class ComplexArray {
 
     /**
      *
-     * @param index
+     * @param index: int
      * @return Le nombre complèxe se trouvant à l'index passé en paramètre.
      */
 
