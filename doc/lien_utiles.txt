@@ -88,3 +88,13 @@ http://jcharts.sourceforge.net/samples/scatter.html
 
 // base de donnée libre pour BCI
 http://sccn.ucsd.edu/~arno/fam2data/publicly_available_EEG_data.html
+
+//Implémentation d'une classe Graphe.java (légèrement modifiée pour le projet)
+http://www.enseignement.polytechnique.fr/informatique/INF431/GrapheX/docgrapheX.pdf
+
+//Documentation pour réaliser un graphique avec jfreecharts
+http://thierry-leriche-dessirier.developpez.com/tutoriels/java/afficher-graphe-jfreechart-5-min/
+
+//Documentation pour extraire des données d'un fichier CSV
+https://openclassrooms.com/forum/sujet/ouvrir-et-lire-un-fichier-csv-56738
+http://thierry-leriche-dessirier.developpez.com/tutoriels/java/charger-donnees-fichier-csv-5-min/

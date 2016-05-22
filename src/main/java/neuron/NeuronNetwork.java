@@ -1,5 +1,9 @@
 package neuron;
 
+import graphe.Graphe;
+import graphe.GrapheMatrice;
+import graphe.Sommet;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -9,16 +13,16 @@ import java.util.Random;
  */
 public class NeuronNetwork {
 
-    private ArrayList<Neuron> neurons;
+    private Graphe neurons;
     private CaracteristiqueTemporel caracteristiquesTemporelles;
+    private ArrayList<Sommet<Neuron>> sommets;
 
     /**
      * Constructeur du réseau de neurones.
      */
 
-    public NeuronNetwork() {
-        this.neurons=new ArrayList<Neuron>();
-        this.neurons=remplirArrayList();
+    public NeuronNetwork(int n) {
+        this.neurons=new GrapheMatrice(n);
         init();
         //caracteristiquesTemporelles=new CaracteristiqueTemporel();
     }
@@ -29,12 +33,13 @@ public class NeuronNetwork {
 
     private void init() {
 
-        float minimalWeight = (float) (-2.4/this.neurons.size());
-        float maximalWeight = (float) (2.4/this.neurons.size());
+        float minimalWeight = (float) (-2.4/this.neurons.taille());
+        float maximalWeight = (float) (2.4/this.neurons.taille());
         Random r = new Random();
+        sommets = (ArrayList<Sommet<Neuron>>) this.neurons.sommets();
 
-        for(int i=0;i<this.neurons.size();i++) {
-            this.neurons.get(i).setWeight(minimalWeight + (r.nextFloat() + minimalWeight) - maximalWeight);
+        for(int i=0;i<this.neurons.taille();i++) {
+            sommets.get(i).getValeur().setWeight(minimalWeight + (r.nextFloat() + minimalWeight) - maximalWeight);
         }
 
     }
@@ -44,14 +49,14 @@ public class NeuronNetwork {
      * @return La liste des neurones nouvellement créée.
      */
 
-    private ArrayList<Neuron> remplirArrayList() {
+    private Graphe remplirArrayList() {
         Random r = new Random();
         int nbMinimalNeurons=10;
         int nbMaximalNeurons=100;
         int nbNeurons=nbMinimalNeurons + r.nextInt(nbMaximalNeurons - nbMinimalNeurons);
 
         for(int i=0;i<=nbNeurons;i++) {
-            ajouterNeuron(new Neuron());
+            ajouterNeuron(new Sommet<Neuron>("Sommet N° " + i+1, i+1, new Neuron()));
         }
 
         return this.neurons;
@@ -62,8 +67,8 @@ public class NeuronNetwork {
      * @return La liste des neurones.
      */
 
-    public ArrayList<Neuron> getNeurons() {
-        return this.neurons;
+    public ArrayList<Sommet<Neuron>> getNeurons() {
+        return this.sommets;
     }
 
     /**
@@ -86,22 +91,23 @@ public class NeuronNetwork {
 
     /**
      * Permet d'ajouter un nouveau neurone à la liste des neurones.
-     * @param neuron:Neuron
+     * @param s:Neuron
      */
 
-    public void ajouterNeuron(Neuron neuron) {
-        this.neurons.add(neuron);
+    public void ajouterNeuron(Sommet<Neuron> s) {
+        this.neurons.ajouterSommet(s);
     }
 
     /**
      * Permet de supprimer de la liste de neurones le neurone passé en paramètre.
-     * @param neuron:Neuron
+     * @param s:Sommet<Neuron>
+     * @Param t:Sommet<Neuron>
      */
 
-    public void supprimerNeuron(Neuron neuron) {
-        for(int i=0;i<this.neurons.size();i++) {
-            if(this.neurons.get(i).equals(neuron)) {
-                this.neurons.remove(neuron);
+    public void supprimerNeuron(Sommet<Neuron> s, Sommet<Neuron> t) {
+        for(int i=0;i<this.neurons.taille();i++) {
+            if(this.sommets.get(i).getValeur().equals(s) || this.sommets.get(i).getValeur().equals(t)) {
+                this.neurons.enleverArc(s, t);
             }
         }
     }
@@ -112,8 +118,8 @@ public class NeuronNetwork {
      */
 
     public void updateValues(float newValue) {
-        for (int i = 0; i < this.neurons.size(); i++) {
-            this.neurons.get(i).setValue(newValue);
+        for (int i = 0; i < this.neurons.taille(); i++) {
+            this.sommets.get(i).getValeur().setValue(newValue);
         }
     }
 
@@ -124,10 +130,10 @@ public class NeuronNetwork {
      */
 
     public void updateValues(ArrayList<Float> newValues) throws LongueurDifferenceException {
-        if(this.neurons.size()==newValues.size()) {
-            for (int i = 0; i < this.neurons.size(); i++) {
+        if(this.neurons.taille()==newValues.size()) {
+            for (int i = 0; i < this.neurons.taille(); i++) {
                 for (int j = 0; j < newValues.size(); j++) {
-                    this.neurons.get(i).setValue(newValues.get(j));
+                    this.sommets.get(i).getValeur().setValue(newValues.get(j));
                 }
             }
         }
@@ -142,8 +148,8 @@ public class NeuronNetwork {
      */
 
     public void updateWeights(float newWeight) {
-        for(int i=0;i<this.neurons.size();i++) {
-            this.neurons.get(i).setWeight(newWeight);
+        for(int i=0;i<this.neurons.taille();i++) {
+            this.sommets.get(i).getValeur().setWeight(newWeight);
         }
     }
 
@@ -154,10 +160,10 @@ public class NeuronNetwork {
      */
 
     public void updateWeights(ArrayList<Float> newWeights) throws LongueurDifferenceException {
-        if(this.neurons.size()==newWeights.size()) {
-            for(int i=0;i<this.neurons.size();i++) {
+        if(this.neurons.taille()==newWeights.size()) {
+            for(int i=0;i<this.neurons.taille();i++) {
                 for(int j=0;j<newWeights.size();j++) {
-                    this.neurons.get(i).setWeight(newWeights.get(j));
+                    this.sommets.get(i).getValeur().setWeight(newWeights.get(j));
                 }
             }
         }
@@ -172,8 +178,8 @@ public class NeuronNetwork {
      */
 
     public void updateDonnees(float newDonnee) {
-        for(int i=0;i<this.neurons.size();i++) {
-            this.neurons.get(i).setDonnee(newDonnee);
+        for(int i=0;i<this.neurons.taille();i++) {
+            this.sommets.get(i).getValeur().setDonnee(newDonnee);
         }
     }
 
@@ -184,10 +190,10 @@ public class NeuronNetwork {
      */
 
     public void updateDonnees(ArrayList<Float> newDonnees) throws LongueurDifferenceException {
-        if(this.neurons.size()==newDonnees.size()) {
-            for(int i=0;i<this.neurons.size();i++) {
+        if(this.neurons.taille()==newDonnees.size()) {
+            for(int i=0;i<this.neurons.taille();i++) {
                 for(int j=0;j<newDonnees.size();j++) {
-                    this.neurons.get(i).setDonnee(newDonnees.get(j));
+                    this.sommets.get(i).getValeur().setDonnee(newDonnees.get(j));
                 }
             }
         }
@@ -202,8 +208,8 @@ public class NeuronNetwork {
      */
 
     public void updateErrorGradients(float newErrorGradient) {
-        for(int i=0;i<this.neurons.size();i++) {
-            this.neurons.get(i).setErrorGradient(newErrorGradient);
+        for(int i=0;i<this.neurons.taille();i++) {
+            this.sommets.get(i).getValeur().setErrorGradient(newErrorGradient);
         }
     }
 
@@ -214,10 +220,10 @@ public class NeuronNetwork {
      */
 
     public void updateErrorGradients(ArrayList<Float> newErrorGradients) throws LongueurDifferenceException {
-        if(this.neurons.size()==newErrorGradients.size()) {
-            for(int i=0;i<this.neurons.size();i++) {
+        if(this.neurons.taille()==newErrorGradients.size()) {
+            for(int i=0;i<this.neurons.taille();i++) {
                 for(int j=0;j<newErrorGradients.size();j++) {
-                    this.neurons.get(i).setErrorGradient(newErrorGradients.get(j));
+                    this.sommets.get(i).getValeur().setErrorGradient(newErrorGradients.get(j));
                 }
             }
         }
@@ -233,9 +239,9 @@ public class NeuronNetwork {
      */
 
     public void updateValueNeuron(int neuron, float newValue) {
-        for(int i=0;i<this.neurons.size();i++) {
-            if(this.neurons.get(i).equals(neuron)) {
-                this.neurons.get(i).setValue(newValue);
+        for(int i=0;i<this.neurons.taille();i++) {
+            if(this.sommets.get(i).getValeur().equals(neuron)) {
+                this.sommets.get(i).getValeur().setValue(newValue);
             }
         }
     }
@@ -247,9 +253,9 @@ public class NeuronNetwork {
      */
 
     public void updateWeightNeuron(int neuron, float newWeight) {
-        for(int i=0;i<this.neurons.size();i++) {
-            if(this.neurons.get(i).equals(neuron)) {
-                this.neurons.get(i).setWeight(newWeight);
+        for(int i=0;i<this.neurons.taille();i++) {
+            if(this.sommets.get(i).getValeur().equals(neuron)) {
+                this.sommets.get(i).getValeur().setWeight(newWeight);
             }
         }
     }
@@ -261,9 +267,9 @@ public class NeuronNetwork {
      */
 
     public void updateDonneeNeuron(int neuron, float newDonnee) {
-        for(int i=0;i<this.neurons.size();i++) {
-            if(this.neurons.get(i).equals(neuron)) {
-                this.neurons.get(i).setDonnee(newDonnee);
+        for(int i=0;i<this.neurons.taille();i++) {
+            if(this.sommets.get(i).getValeur().equals(neuron)) {
+                this.sommets.get(i).getValeur().setDonnee(newDonnee);
             }
         }
     }
@@ -275,9 +281,9 @@ public class NeuronNetwork {
      */
 
     public void updateErrorGradientNeuron(int neuron, float newErrorGradient) {
-        for(int i=0;i<this.neurons.size();i++) {
-            if(this.neurons.get(i).equals(neuron)) {
-                this.neurons.get(i).setErrorGradient(newErrorGradient);
+        for(int i=0;i<this.neurons.taille();i++) {
+            if(this.sommets.get(i).getValeur().equals(neuron)) {
+                this.sommets.get(i).getValeur().setErrorGradient(newErrorGradient);
             }
         }
     }
