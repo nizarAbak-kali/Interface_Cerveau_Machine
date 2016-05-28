@@ -110,7 +110,7 @@ public class GrapheMatrice implements Graphe {
         GrapheMatrice G = new GrapheMatrice(n);
 
         for(int i=0;i<n;i++) {
-            G.ajouterSommet(new Sommet<Neuron>(i+"", 0));
+            G.ajouterSommet(new Sommet<Neuron>("", i, new Neuron()));
         }
         for(int i=0;i<n;i++) {
             for(int j=0;j<M[i].length;j++) {

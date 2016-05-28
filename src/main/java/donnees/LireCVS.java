@@ -24,24 +24,23 @@ public class LireCVS {
      * Méthode qui permet de lire les données d'un fichier donné et de les afficher dans la console.
      */
 
-    public ArrayList<String> chargerFichier() {
+    private ArrayList<String[]> chargerFichier() {
 
-        ArrayList<String> listeDonnees = new ArrayList<String>();
-
-        String backSlash = System.getProperty("file.separator");
-        String virgule = System.clearProperty("file.separator");
-        file_p.replace(backSlash, "\\");
-        File fichierDonneesIris = new File(file_p);
+        ArrayList<String[]> listeDonnees = new ArrayList<String[]>();
+        File fichier = new File(file_p);
+        String[] tabIntermediaire = new String[1000];
 
         try {
-            InputStream flux = new FileInputStream(fichierDonneesIris);
+            InputStream flux = new FileInputStream(fichier);
             InputStreamReader lecture = new InputStreamReader(flux);
             BufferedReader buff = new BufferedReader(lecture);
             String ligne;
             int i=0;
 
             while((ligne=buff.readLine())!=null && i!=listeDonnees.size()) {
-                listeDonnees.add(ligne);
+                tabIntermediaire=ligne.split(",");
+                tabIntermediaire=ligne.split("-");
+                listeDonnees.add(tabIntermediaire);
                 i++;
             }
             buff.close();
@@ -54,20 +53,58 @@ public class LireCVS {
 
     }
 
-    public ArrayList<Float> convertirDonnees(ArrayList<String> donnees) {
+    private ArrayList<Float[]> convertirDonnees(ArrayList<String[]> donnees) {
 
-        ArrayList<Float> donneesConverties = new ArrayList<Float>();
+        ArrayList<Float[]> donneesConverties = new ArrayList<Float[]>();
+        Float[] tabIntermediaire = new Float[1000];
 
         for(int i=0;i<donnees.size();i++) {
-            donneesConverties.add(Float.valueOf(donnees.get(i)));
+            for(int j=0;j<donnees.get(i).length;j++) {
+                tabIntermediaire[j]=Float.valueOf(donnees.get(i)[i]);
+            }
+            donneesConverties.add(tabIntermediaire);
         }
 
         return donneesConverties;
 
     }
 
+    public String[] chargerPremiereLigneFichier() {
+        FileReader monFichier = null;
+        BufferedReader tampon = null;
+        String[] tabIntermediaire = new String[1000];
+
+        try {
+            monFichier = new FileReader(file_p);
+            tampon = new BufferedReader(monFichier);
+            String ligne = tampon.readLine();
+            tabIntermediaire=ligne.split(",");
+            for(int i=0;i<tabIntermediaire.length;i++) {
+                System.out.println(tabIntermediaire[i]);
+            }
+        } catch(IOException exception) {
+            exception.printStackTrace();
+        } finally {
+            try {
+                tampon.close();
+                monFichier.close();
+            } catch(IOException exception1) {
+                exception1.printStackTrace();
+            }
+        }
+        return tabIntermediaire;
+    }
+
+    public Float[] convertirPremiereLigneFichier(String[] donnees) {
+        Float[] premiereLigneConvertie = new Float[donnees.length];
+        for(int i=0;i<donnees.length;i++) {
+            premiereLigneConvertie[i]=Float.valueOf(donnees[i]);
+        }
+        return premiereLigneConvertie;
+    }
+
     public void run() {
-        ArrayList<String> donneesFichier = chargerFichier();
-        ArrayList<Float> donneesConverties = convertirDonnees(donneesFichier);
+        ArrayList<String[]> donneesFichier = chargerFichier();
+        ArrayList<Float[]> donneesConverties = convertirDonnees(donneesFichier);
     }
 }

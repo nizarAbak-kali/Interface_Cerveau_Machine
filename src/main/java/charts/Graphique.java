@@ -4,43 +4,34 @@ package charts;/**
  * @author(Nizar ABAK-KALI)
  */
 
-import org.LiveGraph.LiveGraph;
-import org.LiveGraph.settings.DataFileSettings;
+import javax.swing.*;
+
+import donnees.LireCVS;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.xy.XYDataset;
+import org.jfree.data.xy.XYSeries;
+import org.jfree.data.xy.XYSeriesCollection;
 
 public class Graphique {
-    private static final String data_path = "\\data\\toto.cvs";
-    private static final String data_settings_path = "\\data\\startup.lgdfs";
-
-    /**
-     * @return Constructeur d'un graphique représentant les données analysées par le réseau de neurones
-     */
-
-    public Graphique() {
-        DataFileSettings dfs = new DataFileSettings();
-        dfs.setDataFile(data_path);
-        dfs.setUpdateFrequency(1000);
-        dfs.save("\\data\\startup.lgdfs");
-    }
-
-    /**
-     * Lance la création du graphique.
-     */
-
-    public void run() {
-        LiveGraph app = LiveGraph.application();
-        app.execStandalone(new String[]{"-dfs", data_settings_path});
-    }
-
-    /**
-     * Méthode principale qui lancera tout le programme.
-     * @param args:String
-     */
 
     public static void main(String[] args) {
-        Graphique g = new Graphique();
-        g.run();
 
+        LireCVS lireCVS = new LireCVS("C:\\Users\\Alexou\\IdeaProjects\\Interface_Cerveau_Machine_5\\data\\Activity-Chat.csv");
+        String[] donnees = lireCVS.chargerPremiereLigneFichier();
+        Float[] donneesConverties = lireCVS.convertirPremiereLigneFichier(donnees);
+        XYSeries series = new XYSeries("Affichage d'un signal représentant une activité cérébrale");
+        for(int i=0;i<donneesConverties.length;i++) {
+            series.add(i+10, (double)donneesConverties[i]);
+        }
+        XYDataset xyDataset = new XYSeriesCollection(series);
+
+        JFreeChart chart = ChartFactory.createXYLineChart("chat signal", "Temps", "Hz", xyDataset, PlotOrientation.VERTICAL, true, true, false);
+
+        ChartFrame frame = new ChartFrame("XYArea chart", chart);
+        frame.setSize(600, 600);
+        frame.setVisible(true);
     }
-
-
 }
