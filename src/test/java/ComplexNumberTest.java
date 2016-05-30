@@ -16,6 +16,11 @@ public class ComplexNumberTest extends TestCase {
     private double echelle_c;
     private double echelle_c2;
 
+    /**
+     * Initialisation des variables pour les tests
+     * @throws Exception
+     */
+
     @Before
     public void setUp() throws Exception {
 
@@ -26,11 +31,21 @@ public class ComplexNumberTest extends TestCase {
 
     }
 
+    /**
+     * Action réalisée à la fin des tests.
+     * @throws Exception
+     */
+
     @After
     public void tearDown() throws Exception {
         System.gc();
 
     }
+
+    /**
+     * Teste si la valeur réelle du nombre complexe est correcte.
+     * @throws Exception
+     */
 
     @Test
     public void testGetReal() throws Exception {
@@ -39,11 +54,21 @@ public class ComplexNumberTest extends TestCase {
 
     }
 
+    /**
+     * Teste si la valeur imaginaire du nombre complexe est correcte.
+     * @throws Exception
+     */
+
     @Test
     public void testGetImag() throws Exception {
 
         assertEquals(-1.0, c.getImag());
     }
+
+    /**
+     * Teste si la valeur absolue du nombre est correcte.
+     * @throws Exception
+     */
 
     @Test
     public void testAbs() throws Exception {
@@ -51,11 +76,21 @@ public class ComplexNumberTest extends TestCase {
 
     }
 
+    /**
+     * Teste la phase d'un nombre complexe.
+     * @throws Exception
+     */
+
     @Test
     public void testPhase() throws Exception {
 
         assertTrue(-Math.PI < c.phase() || c.phase() > Math.PI);
     }
+
+    /**
+     * Teste l'addition de deux nombres complexes.
+     * @throws Exception
+     */
 
     @Test
     public void testPlus() throws Exception {
@@ -64,11 +99,21 @@ public class ComplexNumberTest extends TestCase {
 
     }
 
+    /**
+     * Teste la soustraction de deux nombres complexes.
+     * @throws Exception
+     */
+
     @Test
     public void testMinus() throws Exception {
 
         assertEquals(new ComplexNumber(-2.5, 1), c.minus(c2));
     }
+
+    /**
+     * Teste la multiplication de deux nombres complexes.
+     * @throws Exception
+     */
 
     @Test
     public void testTimes() throws Exception {
@@ -77,17 +122,32 @@ public class ComplexNumberTest extends TestCase {
 
     }
 
+    /**
+     * Teste la multiplication d'un nombre complexe par un autre nombre complexe ou pas.
+     * @throws Exception
+     */
+
     @Test
     public void testTimes1() throws Exception {
 
         assertEquals(new ComplexNumber(12.5, -5), c.times(5));
     }
 
+    /**
+     * Teste si le conjugué du nombre complexe est correct.
+     * @throws Exception
+     */
+
     @Test
     public void testConjugate() throws Exception {
 
         assertEquals(new ComplexNumber(2.5, 1), c.conjugate());
     }
+
+    /**
+     * Teste la réciproque d'un nombre complexe.
+     * @throws Exception
+     */
 
     @Test
     public void testReciprocal() throws Exception {
@@ -96,11 +156,21 @@ public class ComplexNumberTest extends TestCase {
 
     }
 
+    /**
+     * Teste la division de deux nombres complexes.
+     * @throws Exception
+     */
+
     @Test
     public void testDivides() throws Exception {
 
         assertEquals(new ComplexNumber(0.43103450536727905, -0.06896551698446274), c.divides(c2));
     }
+
+    /**
+     * Teste l'exponentielle d'un nombre complexe.
+     * @throws Exception
+     */
 
     @Test
     public void testExp() throws Exception {
@@ -109,6 +179,11 @@ public class ComplexNumberTest extends TestCase {
 
     }
 
+    /**
+     * Teste le sinus d'un nombre complexe.
+     * @throws Exception
+     */
+
     @Test
     public void testSin() throws Exception {
 
@@ -116,12 +191,22 @@ public class ComplexNumberTest extends TestCase {
 
     }
 
+    /**
+     * Teste le cosinus d'un nombre complexe.
+     * @throws Exception
+     */
+
     @Test
     public void testCos() throws Exception {
 
         assertEquals(new ComplexNumber(new ComplexNumber(-1.2362291812896729, 0.7033251523971558)), c.cos());
 
     }
+
+    /**
+     * Teste la tangeante d'un nombre complexe.
+     * @throws Exception
+     */
 
     @Test
     public void testTan() throws Exception {

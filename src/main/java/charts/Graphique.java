@@ -17,6 +17,11 @@ import org.jfree.data.xy.XYSeriesCollection;
 
 public class Graphique {
 
+    /**
+     * Méthode permettant d'afficher un graphique représentant l'un des signaux des fichiers de données fournies dans une fenêtre.
+     * @param args
+     */
+
     public static void main(String[] args) {
 
         LireCVS lireCVS = new LireCVS("C:\\Users\\Alexou\\IdeaProjects\\Interface_Cerveau_Machine_5\\data\\Activity-Chat.csv");

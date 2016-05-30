@@ -5,6 +5,11 @@ package neuron;
  */
 public class NeuronNetworkLearnAndResults {
 
+    /**
+     * Méthode permettant de tester notre réseau de neurones sur les fichiers de données fournis.
+     * @param args
+     */
+
     public static void main(String[] args) {
 
     }

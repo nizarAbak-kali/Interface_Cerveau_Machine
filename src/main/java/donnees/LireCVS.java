@@ -21,10 +21,11 @@ public class LireCVS {
     }
 
     /**
-     * Méthode qui permet de lire les données d'un fichier donné et de les afficher dans la console.
+     * Méthode permettant de charger en mémoire le fichier passé en paramètre.
+     * @return Un tableau de tableau de String représentant les trois signaux du fichier
      */
 
-    private String[][] chargerFichier() {
+    public String[][] chargerFichier() {
 
         String[][] listeDonnees = new String[3][1000];
         File fichier = new File(file_p);
@@ -52,7 +53,13 @@ public class LireCVS {
 
     }
 
-    private Float[][] convertirDonnees(String[][] donnees) {
+    /**
+     * Méthode permettant de convertir les données de type String en float (ou nombres flottants)
+     * @param donnees
+     * @return Le tableau de données converties.
+     */
+
+    public Float[][] convertirDonnees(String[][] donnees) {
 
         Float[][] donneesConverties = new Float[3][1000];
 
@@ -65,6 +72,11 @@ public class LireCVS {
         return donneesConverties;
 
     }
+
+    /**
+     * Permet de charger en mémoire la première ligne du fichier passé en paramètre (le premier signal parmi les trois).
+     * @return un tableau de String représentant l'ensemble du signal chargé en mémoire.
+     */
 
     public String[] chargerPremiereLigneFichier() {
         FileReader monFichier = null;
@@ -92,16 +104,17 @@ public class LireCVS {
         return tabIntermediaire;
     }
 
+    /**
+     * Convertie le teste de la première ligne du fichier passé en paramètre en ligne de nombre flottants.
+     * @param donnees
+     * @return Un tableau de nombres flottants représentant le premier signal du fichier converti.
+     */
+
     public Float[] convertirPremiereLigneFichier(String[] donnees) {
         Float[] premiereLigneConvertie = new Float[donnees.length];
         for(int i=0;i<donnees.length;i++) {
             premiereLigneConvertie[i]=Float.valueOf(donnees[i]);
         }
         return premiereLigneConvertie;
-    }
-
-    public void run() {
-        String[][] donneesFichier = chargerFichier();
-        Float[][] donneesConverties = convertirDonnees(donneesFichier);
     }
 }

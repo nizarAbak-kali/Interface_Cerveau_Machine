@@ -14,6 +14,11 @@ public class GrapheMatrice implements Graphe {
     private Vector<Vector<Arc>> M;
     private Numerotation numerotation;
 
+    /**
+     * Constructeur d'une instance d'un graphe sous forme de matrice.
+     * @param n
+     */
+
     public GrapheMatrice(int n) {
         this.numerotation = new Numerotation(n);
         this.M = new Vector<Vector<Arc>>(n);
@@ -55,6 +60,13 @@ public class GrapheMatrice implements Graphe {
         return M.get(si).get(ti)!=null;
     }
 
+    /**
+     * Vérifie si un arc existe entre les deux sommets de numéros respectifs i et j passés en paramètres.
+     * @param i
+     * @param j
+     * @return Vrai s'il y a un arc et faux sinon.
+     */
+
     private boolean existeArc(int i, int j) {
         return M.get(i).get(j)!=null;
     }
@@ -72,6 +84,12 @@ public class GrapheMatrice implements Graphe {
         int ti = numerotation.numero(t);
         return M.get(si).get(ti).valeur();
     }
+
+    /**
+     * @param i
+     * @param j
+     * @return La valeur de l'arc entre les sommets de numéros respectifs i et j passés en paramètres.
+     */
 
     private int valeurArc(int i, int j) {
         return M.get(i).get(j).valeur();
@@ -104,6 +122,12 @@ public class GrapheMatrice implements Graphe {
         }
         return l;
     }
+
+    /**
+     *
+     * @param M
+     * @return Retourne une instance de GrapheMatrice représentant le tableau M passé en paramètre.
+     */
 
     public static GrapheMatrice deMatrice(int [][] M) {
         int n = M.length;

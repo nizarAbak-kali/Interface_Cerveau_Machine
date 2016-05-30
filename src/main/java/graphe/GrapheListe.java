@@ -15,6 +15,11 @@ public class GrapheListe implements Graphe {
     private Vector<LinkedList<Arc>> L;
     private Numerotation numerotation;
 
+    /**
+     * Constructeur d'une isntance d'un graphe sous forme de liste.
+     * @param n
+     */
+
     public GrapheListe(int n) {
         this.numerotation = new Numerotation(n);
         L = new Vector<LinkedList<Arc>>(n);
@@ -55,6 +60,13 @@ public class GrapheListe implements Graphe {
         return false;
     }
 
+    /**
+     * Teste s'il existe un arc entre deux sommets de numéros respectifs i et j.
+     * @param i
+     * @param j
+     * @return Vrai s'il y a un arc entre les deux sommets, faux sinon.
+     */
+
     private boolean existeArc(int i, int j) {
         Sommet<Neuron> t = numerotation.elementAt(j);
         for(Arc a:L.get(i)) {
@@ -72,6 +84,13 @@ public class GrapheListe implements Graphe {
         L.get(si).addLast(new Arc(s, t, val));
     }
 
+    /**
+     * Permet d'ajouter un arc entre deux sommets de numéros respectifs i et j en lui attribuant la valeur val.
+     * @param i
+     * @param j
+     * @param val
+     */
+
     public void ajouterArc(int i, int j, int val) {
         L.get(i).addLast(new Arc(numerotation.elementAt(i), numerotation.elementAt(j), val));
     }
@@ -85,7 +104,13 @@ public class GrapheListe implements Graphe {
         return -1;
     }
 
-    public int valeurArc(int i, int j, int val) {
+    /**
+     * @param i
+     * @param j
+     * @return La valeur de l'arc entre les deux sommets de numéros respectifs i et j.
+     */
+
+    public int valeurArc(int i, int j) {
         Sommet<Neuron> t = numerotation.elementAt(j);
         for(Arc a:L.get(i)) {
             if(a.destination().equals(t)) {
