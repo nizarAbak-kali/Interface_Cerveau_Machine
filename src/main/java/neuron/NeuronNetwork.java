@@ -1,6 +1,7 @@
 package neuron;
 
 import graphe.Graphe;
+import graphe.GrapheListe;
 import graphe.GrapheMatrice;
 import graphe.Sommet;
 
@@ -22,7 +23,7 @@ public class NeuronNetwork {
      */
 
     public NeuronNetwork(int n) {
-        this.neurons=new GrapheMatrice(n);
+        this.neurons=new GrapheListe(n);
         init();
         //caracteristiquesTemporelles=new CaracteristiqueTemporel();
     }

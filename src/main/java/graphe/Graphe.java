@@ -3,6 +3,7 @@ package graphe;
 import neuron.Neuron;
 
 import java.util.Collection;
+import java.util.LinkedList;
 
 /**
  * Created by Alexou on 21/05/2016.
@@ -17,4 +18,6 @@ public interface Graphe {
     public int valeurArc(Sommet<Neuron> s, Sommet<Neuron> t);
     public void enleverArc(Sommet<Neuron> s, Sommet<Neuron> t);
     public Collection<Sommet<Neuron>> sommets();
+    public LinkedList<Arc> voisins(Sommet<Neuron> s);
+    public void modifierValeur(Sommet<Neuron> s, Sommet<Neuron> t, int val);
 }

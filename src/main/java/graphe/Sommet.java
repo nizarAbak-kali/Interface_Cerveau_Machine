@@ -50,4 +50,8 @@ public class Sommet<T extends Neuron> {
     public T getValeur() {
         return this.valeur;
     }
+
+    public String getNom() {
+        return this.nom;
+    }
 }
