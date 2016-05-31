@@ -60,14 +60,7 @@ public class GrapheListe implements Graphe {
         return false;
     }
 
-    /**
-     * Teste s'il existe un arc entre deux sommets de numéros respectifs i et j.
-     * @param i
-     * @param j
-     * @return Vrai s'il y a un arc entre les deux sommets, faux sinon.
-     */
-
-    private boolean existeArc(int i, int j) {
+    public boolean existeArc(int i, int j) {
         Sommet<Neuron> t = numerotation.elementAt(j);
         for(Arc a:L.get(i)) {
             if(a.destination().equals(t)) {
@@ -103,12 +96,6 @@ public class GrapheListe implements Graphe {
         }
         return -1;
     }
-
-    /**
-     * @param i
-     * @param j
-     * @return La valeur de l'arc entre les deux sommets de numéros respectifs i et j.
-     */
 
     public int valeurArc(int i, int j) {
         Sommet<Neuron> t = numerotation.elementAt(j);

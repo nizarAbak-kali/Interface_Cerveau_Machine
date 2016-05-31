@@ -1,7 +1,6 @@
 package donnees;
 
 import java.io.*;
-import java.util.ArrayList;
 
 /**
  * Created by nizar on 04/03/2016.
@@ -59,9 +58,9 @@ public class LireCVS {
      * @return Le tableau de données converties.
      */
 
-    public Float[][] convertirDonnees(String[][] donnees) {
+    public float[][] convertirDonnees(String[][] donnees) {
 
-        Float[][] donneesConverties = new Float[3][1000];
+        float[][] donneesConverties = new float[3][1000];
 
         for(int i=0;i<donnees.length;i++) {
             for(int j=0;j<donnees[i].length;j++) {
@@ -74,23 +73,25 @@ public class LireCVS {
     }
 
     /**
-     * Permet de charger en mémoire la première ligne du fichier passé en paramètre (le premier signal parmi les trois).
-     * @return un tableau de String représentant l'ensemble du signal chargé en mémoire.
+     * Charge la ligne du fichier dont le numéro est passé en paramètre.
+     * @param numLigne
+     * @return
      */
 
-    public String[] chargerPremiereLigneFichier() {
+    public String[] chargerLingneFichier(int numLigne) {
         FileReader monFichier = null;
         BufferedReader tampon = null;
         String[] tabIntermediaire = new String[1000];
 
         try {
             monFichier = new FileReader(file_p);
+            int i = 0;
+            while(i!=numLigne) {
+                i++;
+            }
             tampon = new BufferedReader(monFichier);
             String ligne = tampon.readLine();
             tabIntermediaire=ligne.split(",");
-            for(int i=0;i<tabIntermediaire.length;i++) {
-                System.out.println(tabIntermediaire[i]);
-            }
         } catch(IOException exception) {
             exception.printStackTrace();
         } finally {
@@ -110,11 +111,11 @@ public class LireCVS {
      * @return Un tableau de nombres flottants représentant le premier signal du fichier converti.
      */
 
-    public Float[] convertirPremiereLigneFichier(String[] donnees) {
-        Float[] premiereLigneConvertie = new Float[donnees.length];
+    public float[] convertirLigneFichier(String[] donnees) {
+        float[] ligneConvertie = new float[donnees.length];
         for(int i=0;i<donnees.length;i++) {
-            premiereLigneConvertie[i]=Float.valueOf(donnees[i]);
+            ligneConvertie[i]=Float.valueOf(donnees[i]);
         }
-        return premiereLigneConvertie;
+        return ligneConvertie;
     }
 }

@@ -25,8 +25,8 @@ public class Graphique {
     public static void main(String[] args) {
 
         LireCVS lireCVS = new LireCVS("C:\\Users\\Alexou\\IdeaProjects\\Interface_Cerveau_Machine_5\\data\\Activity-Chat.csv");
-        String[] donnees = lireCVS.chargerPremiereLigneFichier();
-        Float[] donneesConverties = lireCVS.convertirPremiereLigneFichier(donnees);
+        String[] donnees = lireCVS.chargerLingneFichier(0);
+        float[] donneesConverties = lireCVS.convertirLigneFichier(donnees);
         XYSeries series = new XYSeries("Affichage d'un signal représentant une activité cérébrale");
         for(int i=0;i<donneesConverties.length;i++) {
             series.add(i+10, (double)donneesConverties[i]);

@@ -14,6 +14,7 @@ public class CaracteristiqueTemporel {
     float skewness;
     float kurtosis;
     float[] data;
+    float[] results;
 
     /**
      * Constructeur d'une caractéristique temporelle à partir d'un tableau de flottants représentant les données passé en paramètre.
@@ -22,19 +23,28 @@ public class CaracteristiqueTemporel {
 
     public CaracteristiqueTemporel(float[] data) {
         this.data = data;
-        init();
+        this.results = init();
     }
 
     /**
      * Initialise toutes les données statistiques de la caractéristique temporelle.
      */
 
-    private void init() {
-        float mean = mean();
-        float variance = variance();
-        float ecartType = ecartType();
-        float skewness = skewness();
-        float kurtosis = kurtosis();
+    private float[] init() {
+        float[] results = new float[11];
+        results[0] = mean();
+        results[1] = variance();
+        results[2] = ecartType();
+        results[3] = skewness();
+        results[4] = kurtosis();
+        results[5] = addition();
+        results[6] = variationCoeff();
+        results[7] = median_absolute_deviation();
+        results[8] = rms();
+        results[9] = iqr();
+        results[10] = shannon_entropy();
+
+        return results;
     }
 
     /**
@@ -178,5 +188,9 @@ public class CaracteristiqueTemporel {
             som += data[i] * Math.log(data[i]);
         }
         return -som;
+    }
+
+    public float[] getResults() {
+        return this.results;
     }
 }

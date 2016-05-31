@@ -42,6 +42,15 @@ public interface Graphe {
     public boolean existeArc(Sommet<Neuron> s, Sommet<Neuron> t);
 
     /**
+     * Teste s'il existe un arc entre deux sommets de numéros respectifs i et j.
+     * @param i
+     * @param j
+     * @return Vrai s'il y a un arc entre les deux sommets, faux sinon.
+     */
+
+    boolean existeArc(int i, int j);
+
+    /**
      * Permet d'ajouter un arc entre les deux sommets passés en paramètres et de lui attribuer une valeur.
      * @param s
      * @param t
@@ -57,6 +66,14 @@ public interface Graphe {
      */
 
     public int valeurArc(Sommet<Neuron> s, Sommet<Neuron> t);
+
+    /**
+     * @param i
+     * @param j
+     * @return La valeur de l'arc entre les deux sommets de numéros respectifs i et j.
+     */
+
+    int valeurArc(int i, int j);
 
     /**
      * Permet d'enlever l'arc entre les deux sommets passés en paramètres s'il y en a un.

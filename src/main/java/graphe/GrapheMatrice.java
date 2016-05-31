@@ -67,7 +67,7 @@ public class GrapheMatrice implements Graphe {
      * @return Vrai s'il y a un arc et faux sinon.
      */
 
-    private boolean existeArc(int i, int j) {
+    public boolean existeArc(int i, int j) {
         return M.get(i).get(j)!=null;
     }
 
@@ -91,7 +91,7 @@ public class GrapheMatrice implements Graphe {
      * @return La valeur de l'arc entre les sommets de numéros respectifs i et j passés en paramètres.
      */
 
-    private int valeurArc(int i, int j) {
+    public int valeurArc(int i, int j) {
         return M.get(i).get(j).valeur();
     }
 
