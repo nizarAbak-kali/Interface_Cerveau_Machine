@@ -9,7 +9,7 @@
 		    \captionof{figure}{Packages composant l'application}
 			\label{fig_pack}
 	\end{figure}
-	L'application est composée de cinq packages: eeg, math, neuron, charts et donnees. Nous allons donc décrire le contenu de chacun de ces packages ainsi que le rôle des classes qui les composent:
+	L'application est composée de six packages: eeg, math, neuron, charts, donnees et graphe. Nous allons donc décrire le contenu de chacun de ces packages ainsi que le rôle des classes qui les composent:
 	\begin{itemize}
 			
 	\item [-] eeg : 
@@ -33,10 +33,14 @@
 	\begin{figure}[h!]
 			\centering
 		    \includegraphics []{../diagramme_classes/neuron.png} \\
-		    \captionof{figure}{Classe Caractéristique}
+		    \captionof{figure}{Classes concernant le réseau de neurones, son apprentissage et ses résultats grâce aux données fournies}
 			\label{fig_neuron}
     		\end{figure}
 	contient la classe CaracteristiqueTemporel qui contient toutes les fonctions ayant attrait aux caractéristiques temporelles d'un neurone pour le réseau qui sera par la suite créé. Ces caractéristiques temporelles regroupent notamment la moyenne des données, la variance, etc...;
+	contient également la classe neuron qui définit les caractéristiques d'un neurone: possède une valeur, une valeur, une donnée des fichiers fournis et un gradient d'erreur qui doit être de 0 lorsque la réponse donnée par le réseau est bonne est bonne;
+	la classe LongueurDifferenceException permet de gérer les différences de taille des tableaux passés en paramètres concernant les fonctions appelées dans la classe NeuronNetwork;
+	la classe NeuronNetwork représente la constitution et la forme (graphe) du réseau de neurones;
+	la classe NeuronNetworkLearnAndResults, quant à elle, permet de tester notre réseau de neurones sur les fichiers de données fournies.
 	\item [-] charts :
 	 \begin{figure}[h!]
 			\centering
@@ -44,15 +48,23 @@
 		    \captionof{figure}{Classe Graphique}
 			\label{fig_graph}
 			\end{figure}
-	 contient la classe Graphique afin de générer les graphiques une fois les résultats obtenus à partir des données grâce à la librairie JFreeCharts;
+	 contient la clase Graphique qui permet de tester l'affichage d'un graphique représentant l'un des signaux d'un des fichiers de données fournies grâce à la librairie Open Source java JFreeCharts.
 	\item [-] donnees : 
 		\begin{figure}[h!]
 		    \includegraphics []{../diagramme_classes/donnees.png} \\
-		    \captionof{figure}{Classe RecupFichier}
+		    \captionof{figure}{Classe LireCVS}
 			\label{fig_donnees}
   			\end{figure}
-	contient la classe RecupFichier permettant de récupérer la base de données pour la stocker en mémoire afin de permettre au programme de travailler avec.
+	contient la classe LireCVS permettant de récupérer un ou des signaux des fichiers de données fournis pour les stocker en mémoire afin de pouvoir travailler avec.
 	
+	\item [-] graphe :
+	    \begin[figure][h!]
+	        \includegraphics []{../diagramme_classes/graphe.png} \\
+	        \captionof{figure}{Classes permettant de définir la forme et la constitution du réseau de neurones}
+	        \label{fig_graphe}
+	        \end{figure}
+	contient les classes permettant de définir la structure du réseau de neurones sous forme de graphe (sommet, arc, forme du graphe, etc...)
+
 	\end{itemize}
 	
 	% section composant_de_l_application (end)
