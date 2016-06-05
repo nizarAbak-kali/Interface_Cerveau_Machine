@@ -20,6 +20,54 @@ public class LireCVS {
     }
 
     /**
+     * Charge en mémoire le fichier passé en paramètre.
+     * @return Le fichier chargé en mémoire.
+     */
+
+    public String[][] chargerFichier() {
+
+        String [][] donnees = new String[3][2560];
+
+        try {
+            FileReader monFichier = new FileReader(file_p);
+            BufferedReader tampon = new BufferedReader(monFichier);
+            String[] tabIntermediaire = new String[2560];
+            String ligne;
+            int i=0;
+
+            while((ligne=tampon.readLine())!=null && i!=donnees.length) {
+                tabIntermediaire=ligne.split(",");
+                donnees[i]=tabIntermediaire;
+                i++;
+            }
+            tampon.close();
+            monFichier.close();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return donnees;
+    }
+
+    /**
+     * Convertit le fichier texte chargé en mémoire en tableau de tableau de floats.
+     * @param tableau
+     * @return Le fichier texte converti.
+     */
+
+    public float[][] conversionTableau(String[][] tableau) {
+
+        float [][] tableauConverti = new float[3][2560];
+
+        for(int i=0;i<tableau.length;i++) {
+            for(int j=0;j<tableau[i].length-1;j++) {
+                tableauConverti[i][j]=Float.valueOf(tableau[i][j]);
+            }
+        }
+        return tableauConverti;
+    }
+
+    /**
      * Charge la ligne du fichier dont le numéro est passé en paramètre.
      * @param numLigne
      * @return
