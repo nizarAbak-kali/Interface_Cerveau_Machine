@@ -1,6 +1,9 @@
 package neuron;
 
 import donnees.LireCVS;
+import graphe.Sommet;
+
+import java.util.Vector;
 
 /**
  * Created by Alexou on 28/05/2016.
@@ -11,7 +14,7 @@ public class NeuronNetworkLearnAndResults {
      * Méthode permettant de charcher les caractéristiques temporelles qui serviront pour l'apprentissage et les résultats donnés par le réseau de neurones.
      */
 
-    public static void chargerCaracteristiquesTemporelles() {
+    public static void apprentissageEtResultatsReseauDeNeurones() {
 
         String fichierChat = "C:\\Users\\Alexou\\IdeaProjects\\Interface_Cerveau_Machine_5\\data\\Activity-Chat.csv";
         String fichierRead = "C:\\Users\\Alexou\\IdeaProjects\\Interface_Cerveau_Machine_5\\data\\Activity-Read.csv";
@@ -24,6 +27,9 @@ public class NeuronNetworkLearnAndResults {
         LireCVS restCVS = new LireCVS(fichierRest);
         LireCVS videoCVS = new LireCVS(fichierVideo);
         LireCVS workCVS = new LireCVS(fichierWork);
+
+        NeuronNetwork neuronNetwork = new NeuronNetwork(100);
+        Vector<Sommet<Neuron>> neurons = neuronNetwork.getNeurons();
 
         String[][] donneesFichierChat = chatCVS.chargerFichier();
         float[][] donneesFichierChatConverties = chatCVS.conversionTableau(donneesFichierChat);
@@ -105,23 +111,6 @@ public class NeuronNetworkLearnAndResults {
             }
         }
     }
-
-    /**
-     * Méthode qui s'occupe de faire apprendre les données au réseau de neurones.
-     */
-
-    public static void apprentissageReseauDeNeurones() {
-
-    }
-
-    /**
-     * Teste de données sur le réseau de neurones pour voir s'il a bien appris.
-     */
-
-    public static void resultatsReseauxDeNeurones() {
-
-    }
-
     /**
      * Méthode permettant de tester notre réseau de neurones sur les fichiers de données fournis.
      * @param args
@@ -129,8 +118,6 @@ public class NeuronNetworkLearnAndResults {
 
     public static void main(String[] args) {
 
-        chargerCaracteristiquesTemporelles();
-        apprentissageReseauDeNeurones();
-        resultatsReseauxDeNeurones();
+        apprentissageEtResultatsReseauDeNeurones();
     }
 }

@@ -7,6 +7,7 @@ import graphe.Sommet;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Vector;
 
 /**
  * Created by Alexou on 10/03/2016.
@@ -16,7 +17,7 @@ public class NeuronNetwork {
 
     private Graphe neurons;
     private CaracteristiqueTemporel caracteristiquesTemporelles;
-    private ArrayList<Sommet<Neuron>> sommets;
+    private Vector<Sommet<Neuron>> sommets;
 
     /**
      * Constructeur du réseau de neurones.
@@ -36,12 +37,9 @@ public class NeuronNetwork {
 
         float minimalWeight = (float) (-2.4/this.neurons.taille());
         float maximalWeight = (float) (2.4/this.neurons.taille());
+        neurons = remplirReseau();
         Random r = new Random();
-        sommets = (ArrayList<Sommet<Neuron>>) this.neurons.sommets();
-
-        for(int i=0;i<this.neurons.taille();i++) {
-            sommets.get(i).getValeur().setWeight(minimalWeight + (r.nextFloat() + minimalWeight) - maximalWeight);
-        }
+        sommets = (Vector<Sommet<Neuron>>) this.neurons.sommets();
 
     }
 
@@ -50,15 +48,27 @@ public class NeuronNetwork {
      * @return La liste des neurones nouvellement créée.
      */
 
-    private Graphe remplirArrayList() {
+    private Graphe remplirReseau() {
         Random r = new Random();
         int nbMinimalNeurons=10;
         int nbMaximalNeurons=100;
         int nbNeurons=nbMinimalNeurons + r.nextInt(nbMaximalNeurons - nbMinimalNeurons);
+        Vector<Sommet<Neuron>> sommets = (Vector<Sommet<Neuron>>) this.neurons.sommets();
 
         for(int i=0;i<=nbNeurons;i++) {
             ajouterNeuron(new Sommet<Neuron>("Sommet N° " + i+1, i+1, new Neuron()));
         }
+
+        /*if(nbNeurons%2==0) {
+            for (int i = 0; i < (this.neurons.taille() / 2) - 1; i++) {
+                this.neurons.ajouterArc(this.sommets.get(i), this.sommets.get(i + 1), i);
+            }
+        }*/
+            /*else {
+            for (int i = 0; i < (this.neurons.taille() + 1) / 2;i++) {
+                this.neurons.ajouterArc(this.sommets.get(i), this.sommets.get(i + 1), i);
+            }
+        }*/
 
         return this.neurons;
     }
@@ -68,7 +78,7 @@ public class NeuronNetwork {
      * @return La liste des neurones.
      */
 
-    public ArrayList<Sommet<Neuron>> getNeurons() {
+    public Vector<Sommet<Neuron>> getNeurons() {
         return this.sommets;
     }
 
